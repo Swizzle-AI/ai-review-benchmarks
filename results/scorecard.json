@@ -21,7 +21,7 @@
         "claim_precision": "8/8",
         "claim_precision_rate": 1.0,
         "duplicate_claims": 8,
-        "repeat_consistency": "5/6"
+        "repeat_consistency": "4/6"
       },
       "copilot": {
         "provider_id": "copilot",
@@ -351,9 +351,11 @@
             ],
             "r2_claims": [
               "META",
-              "META"
+              "FP",
+              "META",
+              "DUP"
             ],
-            "consistent": true
+            "consistent": false
           }
         }
       },
@@ -696,6 +698,7 @@
               "META"
             ],
             "r2_claims": [
+              "META",
               "META"
             ],
             "consistent": true

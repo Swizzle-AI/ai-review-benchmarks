@@ -4,8 +4,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Valid secondary observation: changing cursor semantics from integer id to scheduled_at breaks in-flight cursors across an upgrade.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -13,7 +13,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_ledger_deduplication_and_blind_anonymization",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Provider quota / rate-limit notice; attempt recorded as QUOTA_STOP in coverage denominator.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -22,7 +22,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -31,7 +31,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -40,8 +40,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor rows[limit-1][2] drops tied-timestamp rows across page boundaries.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -49,8 +49,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Valid secondary observation: ORDER BY scheduled_at DESC, id DESC performs a full table scan + temp B-tree sort without an index.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -67,8 +67,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor rows[limit-1][2] drops tied-timestamp rows across page boundaries.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -94,7 +94,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -103,7 +103,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -121,8 +121,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Valid secondary observation: ORDER BY scheduled_at DESC, id DESC performs a full table scan + temp B-tree sort without an index.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -130,8 +130,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor rows[limit-1][2] drops tied-timestamp rows across page boundaries.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -157,7 +157,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -166,7 +166,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -184,8 +184,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor rows[limit-1][2] drops tied-timestamp rows across page boundaries.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -202,8 +202,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_01_pagination_tie_drops_row",
-    "grading_rationale": "Valid secondary observation: changing cursor semantics from integer id to scheduled_at breaks in-flight cursors across an upgrade.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -211,7 +211,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_02",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -229,8 +229,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_02_csv_corruption_with_comma",
-    "grading_rationale": "Verified by oracle: replacing csv.writer with ','.join(map(str, row)) corrupts RFC-4180 CSV columns when report contains commas/quotes/newlines.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: manual ','.join(map(str, row)) corrupts RFC-4180 CSV columns when report contains commas/quotes/newlines.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -238,7 +238,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -247,8 +247,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_02_csv_corruption_with_comma",
-    "grading_rationale": "Valid secondary observation on SQLite cursor lifetime during streaming I/O.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -283,8 +283,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_02_csv_corruption_with_comma",
-    "grading_rationale": "Verified by oracle: replacing csv.writer with ','.join(map(str, row)) corrupts RFC-4180 CSV columns when report contains commas/quotes/newlines.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: manual ','.join(map(str, row)) corrupts RFC-4180 CSV columns when report contains commas/quotes/newlines.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -292,7 +292,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_02",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -301,7 +301,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -319,8 +319,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_03_batch_remainder_dropped_and_smoke_fails",
-    "grading_rationale": "Verified by oracle and aws/deploy.py smoke: range(0, len(jobs) - 20 + 1, 20) drops len(jobs) % 20 remainder jobs (0/1 delivered on smoke check).",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle and aws/deploy.py smoke: range(0, len(jobs) - 20 + 1, 20) drops len(jobs) % 20 remainder jobs.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -328,7 +328,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -355,7 +355,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -364,7 +364,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_03",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -373,8 +373,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_03_batch_remainder_dropped_and_smoke_fails",
-    "grading_rationale": "Verified by oracle and aws/deploy.py smoke: range(0, len(jobs) - 20 + 1, 20) drops len(jobs) % 20 remainder jobs (0/1 delivered on smoke check).",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle and aws/deploy.py smoke: range(0, len(jobs) - 20 + 1, 20) drops len(jobs) % 20 remainder jobs.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -391,7 +391,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_03",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -436,8 +436,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Secondary observation about unserialized PRAGMA user_version check in reports.migrate; does not identify the workers-17 legacy_format dependency.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -454,7 +454,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -463,8 +463,8 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
-    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED'], reason='NO_CLOUD_ACCOUNT').",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -472,8 +472,8 @@
     "classification": "ENV-ASK",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
-    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED'], reason='NO_CLOUD_ACCOUNT').",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -499,7 +499,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -508,8 +508,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Secondary observation about unserialized PRAGMA user_version check in reports.migrate; does not identify the workers-17 legacy_format dependency.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -517,7 +517,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -526,7 +526,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -553,8 +553,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against inventory-204: elm runs 2 replicas of workers-17 polling SELECT id, legacy_format ..., which crashes with OperationalError: no such column: legacy_format.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -562,7 +562,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -571,8 +571,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against inventory-204: elm runs 2 replicas of workers-17 polling SELECT id, legacy_format ..., which crashes with OperationalError: no such column: legacy_format.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -589,7 +589,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -598,8 +598,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Secondary observation about unserialized PRAGMA user_version check in reports.migrate; does not identify the workers-17 legacy_format dependency.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -616,7 +616,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -625,8 +625,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against inventory-204: elm runs 2 replicas of workers-17 polling SELECT id, legacy_format ..., which crashes with OperationalError: no such column: legacy_format.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -643,8 +643,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_04_drop_column_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against inventory-204: elm runs 2 replicas of workers-17 polling SELECT id, legacy_format ..., which crashes with OperationalError: no such column: legacy_format.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -652,7 +652,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -661,7 +661,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -697,7 +697,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -742,7 +742,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -769,7 +769,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -814,7 +814,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -823,7 +823,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -832,7 +832,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -841,8 +841,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05_batch_size_50_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar's archive-11 max_rows_per_request=40 limit and rejects the first 50-row batch of 70 ready rows.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar archive-11 max_rows_per_request=40 limit.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -850,7 +850,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -877,8 +877,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05_batch_size_50_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar's archive-11 max_rows_per_request=40 limit and rejects the first 50-row batch of 70 ready rows.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar archive-11 max_rows_per_request=40 limit.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -895,8 +895,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05_batch_size_50_env_dependent",
-    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar's archive-11 max_rows_per_request=40 limit and rejects the first 50-row batch of 70 ready rows.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar archive-11 max_rows_per_request=40 limit.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -913,7 +913,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -922,7 +922,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_05",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -931,7 +931,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -940,7 +940,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -967,8 +967,8 @@
     "classification": "ENV-ASK",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06",
-    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED'], reason='NO_CLOUD_ACCOUNT').",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -976,8 +976,8 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06",
-    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED'], reason='NO_CLOUD_ACCOUNT').",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -994,7 +994,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1003,8 +1003,8 @@
     "classification": "ENV-ASK",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06_queue_rename_env_dependent_and_smoke_fails",
-    "grading_rationale": "Correctly flags that schedule() writes to 'report-dispatch' while README/workers polling 'reports' will leave deliveries pending unless worker subscriptions are coordinated.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Correctly flags that schedule() writes to 'report-dispatch' while workers polling 'reports' will leave deliveries pending.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1039,7 +1039,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1048,8 +1048,8 @@
     "classification": "ENV-ASK",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06_queue_rename_env_dependent_and_smoke_fails",
-    "grading_rationale": "Correctly flags that schedule() writes to 'report-dispatch' while README/workers polling 'reports' will leave deliveries pending unless worker subscriptions are coordinated.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Correctly flags that schedule() writes to 'report-dispatch' while workers polling 'reports' will leave deliveries pending.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1057,8 +1057,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06_queue_rename_env_dependent_and_smoke_fails",
-    "grading_rationale": "Verified by two-site simulator against subscriptions-416: elm subscribes only to ['reports'], leaving all 8 due jobs stranded on 'report-dispatch'.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against subscriptions-416: elm subscribes only to ['reports'], stranding 8 due jobs on 'report-dispatch'.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1075,8 +1075,8 @@
     "classification": "ENV-TP",
     "cites_env_evidence": true,
     "identifies_affected_site": true,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06_queue_rename_env_dependent_and_smoke_fails",
-    "grading_rationale": "Verified by two-site simulator against subscriptions-416: elm subscribes only to ['reports'], leaving all 8 due jobs stranded on 'report-dispatch'.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against subscriptions-416: elm subscribes only to ['reports'], stranding 8 due jobs on 'report-dispatch'.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1093,7 +1093,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1102,7 +1102,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_06",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1111,7 +1111,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1138,7 +1138,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1156,7 +1156,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1174,8 +1174,8 @@
     "classification": "FP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_07_partial_covering_index_is_clean_improvement",
-    "grading_rationale": "False positive on clean migration Case 07: reports.migrate() is unchanged in this PR and runs single-process CLI/Lambda initialization; flagging the 2-line CREATE INDEX migration as defective violates clean-change specificity.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "False positive on clean migration Case 07.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1183,7 +1183,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1219,7 +1219,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_07",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1237,7 +1237,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_08",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1264,7 +1264,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_08",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1282,7 +1282,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1291,8 +1291,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09_held_out_retry_cursor_consumes_next_batch",
-    "grading_rationale": "Verified by oracle on Held-Out Case 09: calling list(islice(rows, EXPORT_BATCH_SIZE)) inside the retry loop advances the SQLite cursor on RuntimeError and silently drops the failed 25-row batch.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1300,7 +1300,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1309,7 +1309,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1345,8 +1345,8 @@
     "classification": "TP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09_held_out_retry_cursor_consumes_next_batch",
-    "grading_rationale": "Verified by oracle on Held-Out Case 09: calling list(islice(rows, EXPORT_BATCH_SIZE)) inside the retry loop advances the SQLite cursor on RuntimeError and silently drops the failed 25-row batch.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1354,8 +1354,8 @@
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09_held_out_retry_cursor_consumes_next_batch",
-    "grading_rationale": "Valid secondary operational suggestion regarding retry backoff delay.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1372,12 +1372,12 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-1D1BD45ACC",
+    "blind_id": "BLIND-158D452417",
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
@@ -1386,84 +1386,93 @@
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-674A7297A5",
-    "classification": "DUP",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09",
-    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-6E0209BABD",
+    "blind_id": "BLIND-2EA14F5BE5",
     "classification": "VALID-AUX",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09_held_out_retry_cursor_consumes_next_batch",
-    "grading_rationale": "Valid secondary operational suggestion regarding retry backoff delay.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-A46DE6C7D2",
+    "blind_id": "BLIND-3A9B07CCEE",
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_all_ten_cases_load_and_pass_oracle",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-A536D8CE23",
-    "classification": "TP",
+    "blind_id": "BLIND-3EAB49FCFA",
+    "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09_held_out_retry_cursor_consumes_next_batch",
-    "grading_rationale": "Verified by oracle on Held-Out Case 09: calling list(islice(rows, EXPORT_BATCH_SIZE)) inside the retry loop advances the SQLite cursor on RuntimeError and silently drops the failed 25-row batch.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-AC2E797C30",
+    "blind_id": "BLIND-4F8760BC9B",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-86D26A9B4D",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A0C4E25373",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-CD3626C003",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D5416FFA25",
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-C60884F62C",
+    "blind_id": "BLIND-DC073C324E",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F9D5232DE8",
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-C88AFB63F8",
-    "classification": "META",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-E61C7788DB",
-    "classification": "META",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-F4AEE39347",
-    "classification": "TP",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_09_held_out_retry_cursor_consumes_next_batch",
-    "grading_rationale": "Verified by oracle on Held-Out Case 09: calling list(islice(rows, EXPORT_BATCH_SIZE)) inside the retry loop advances the SQLite cursor on RuntimeError and silently drops the failed 25-row batch.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1480,7 +1489,7 @@
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_10",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1516,7 +1525,7 @@
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_10",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
@@ -1525,39 +1534,39 @@
     "classification": "FP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_10_held_out_negative_timestamp_guard_is_clean",
-    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10: rejecting scheduled_at < 0 in schedule() is a sound input guard; claiming it causes regression or requires schema migration on a 2-line validation guard is a false positive.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-47510F3318",
+    "blind_id": "BLIND-033A2053F6",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-11538A0073",
     "classification": "DUP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_10",
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-5E92FFC8F4",
-    "classification": "META",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-856ED0083F",
+    "blind_id": "BLIND-2A4EC227A4",
     "classification": "FP",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_10_held_out_negative_timestamp_guard_is_clean",
-    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10: rejecting scheduled_at < 0 in schedule() is a sound input guard; claiming it causes regression or requires schema migration on a 2-line validation guard is a false positive.",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-BC321E475A",
+    "blind_id": "BLIND-7BB44C21F1",
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
@@ -1566,30 +1575,48 @@
     "graded_by": "oracle-blind-grader-v1"
   },
   {
-    "blind_id": "BLIND-CB8A9233C4",
+    "blind_id": "BLIND-80631011C2",
     "classification": "META",
     "cites_env_evidence": false,
     "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py::BenchmarkSuiteTests::test_case_10",
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-96FFF26A9D",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-C174F3A639",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E22E2282C4",
+    "classification": "FP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-FF05C554D5",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
     "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-D78B57517F",
-    "classification": "META",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
-    "graded_by": "oracle-blind-grader-v1"
-  },
-  {
-    "blind_id": "BLIND-E30018B038",
-    "classification": "META",
-    "cites_env_evidence": false,
-    "identifies_affected_site": false,
-    "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
     "graded_by": "oracle-blind-grader-v1"
   }
 ]

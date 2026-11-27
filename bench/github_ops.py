@@ -318,7 +318,9 @@ PROVIDER_BOT_TOKENS: dict[str, tuple[str, ...]] = {
 
 def matches_provider_actor(provider_id: str, login_or_slug: str) -> bool:
     actor = (login_or_slug or "").lower()
-    tokens = PROVIDER_BOT_TOKENS.get(provider_id, (provider_id.lower(),))
+    tokens = PROVIDER_BOT_TOKENS.get(provider_id)
+    if not tokens:
+        return False
     return any(tok in actor for tok in tokens)
 
 
@@ -448,6 +450,16 @@ def collect_provider_reviews(
         new_comments = 0
         quota_hit = False
 
+        QUOTA_EXHAUSTED_PHRASES = (
+            "rate limit exceeded",
+            "insufficient remaining quota",
+            "quota exceeded",
+            "trial expired",
+            "credits exhausted",
+            "no credits remain",
+            "upgrade your plan",
+        )
+
         # Ingest top-level PR reviews
         for rev in reviews:
             login = (rev.get("user") or {}).get("login", "unknown")
@@ -458,7 +470,7 @@ def collect_provider_reviews(
             timestamps.append(ts)
             if not body:
                 continue
-            if any(q in body.lower() for q in ("rate limit", "quota", "trial expired", "credits exhausted", "upgrade your plan")):
+            if any(q in body.lower() for q in QUOTA_EXHAUSTED_PHRASES):
                 quota_hit = True
             cuid = f"review:{aid}:{rev['id']}"
             if ingest_raw_comment(
@@ -510,7 +522,7 @@ def collect_provider_reviews(
             timestamps.append(ts)
             if not body:
                 continue
-            if any(q in body.lower() for q in ("rate limit", "quota", "trial expired", "credits exhausted", "no credits remain")):
+            if any(q in body.lower() for q in QUOTA_EXHAUSTED_PHRASES):
                 quota_hit = True
             cuid = f"issue:{aid}:{ic['id']}"
             if ingest_raw_comment(
@@ -536,7 +548,7 @@ def collect_provider_reviews(
             out = cr.get("output") or {}
             summary_text = "\n\n".join(filter(None, [out.get("title"), out.get("summary"), out.get("text")])).strip()
             if summary_text:
-                if any(q in summary_text.lower() for q in ("rate limit", "quota", "trial expired", "credits exhausted", "no credits remain")):
+                if any(q in summary_text.lower() for q in QUOTA_EXHAUSTED_PHRASES):
                     quota_hit = True
                 cuid = f"check:{aid}:{cr['id']}"
                 if ingest_raw_comment(

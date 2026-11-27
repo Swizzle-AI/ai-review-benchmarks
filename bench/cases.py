@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import tempfile
 from types import ModuleType
 from typing import Any
@@ -164,13 +165,25 @@ def apply_unified_patch(base_dir: Path, patch_text: str) -> None:
 
 
 def materialize_app(dest_dir: Path, case_id: str | None = None) -> Path:
-    """Copy clean pilot/base application files into dest_dir and optionally apply case_id's patch."""
+    """Copy clean pilot/base application files into dest_dir (preferring git baseline snapshot) and optionally apply case_id's patch."""
     dest_dir.mkdir(parents=True, exist_ok=True)
     for rel in ["reports.py", "console.py", "migrations/001_initial.sql"]:
-        src = ROOT / rel
         dst = dest_dir / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, dst)
+        loaded_from_git = False
+        for rev in ("9b5ac64ab0d3ba414c5edec1e64fcdf8b3b19a1a", "79d03777827b88aa23ee9309ebefab5f9766cd09"):
+            proc = subprocess.run(
+                ["git", "-C", str(ROOT), "show", f"{rev}:{rel}"],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if proc.returncode == 0 and proc.stdout:
+                dst.write_text(proc.stdout, encoding="utf-8")
+                loaded_from_git = True
+                break
+        if not loaded_from_git:
+            shutil.copy2(ROOT / rel, dst)
     if case_id is not None:
         spec = load_cases(include_held_out=True)[case_id]
         apply_unified_patch(dest_dir, spec.patch_text)

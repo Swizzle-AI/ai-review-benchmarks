@@ -434,20 +434,27 @@ def compute_provider_scorecard(conn: sqlite3.Connection) -> dict[str, Any]:
                     "claims": labels,
                 }
 
-                # Check r=2 repeatability if present
+                # Check r=2 repeatability if present using the exact same condition- and category-specific hit predicate
                 att_r2 = att_lookup.get((pid, cid, cond, 2))
                 if att_r2 and att_r2["terminal_status"] in ("completed", "completed_quiet"):
                     repeat_pairs += 1
                     acl2 = claims_by_attempt.get(att_r2["attempt_id"], [])
                     labels2 = [c["classification"] for c in acl2 if c.get("classification")]
-                    r1_good = any(x in labels for x in ("TP", "ENV-TP", "ENV-ASK")) or (category == "clean" and "FP" not in labels)
-                    r2_good = any(x in labels2 for x in ("TP", "ENV-TP", "ENV-ASK")) or (category == "clean" and "FP" not in labels2)
-                    if r1_good == r2_good:
+                    if cond == "code_only":
+                        if category == "code_defect":
+                            r2_hit = "TP" in labels2
+                        elif category == "env_dependent":
+                            r2_hit = ("ENV-ASK" in labels2 or "ENV-TP" in labels2) and ("FP" not in labels2)
+                        else:
+                            r2_hit = "FP" not in labels2
+                    else:
+                        r2_hit = "ENV-TP" in labels2
+                    if hit == r2_hit:
                         repeat_matches += 1
                     matrix[pid]["repeat_r2"][f"{cid}:{cond}"] = {
                         "r1_claims": labels,
                         "r2_claims": labels2,
-                        "consistent": r1_good == r2_good,
+                        "consistent": hit == r2_hit,
                     }
 
         non_dup_claims = valid_claims + fp_claims

@@ -23,8 +23,7 @@ jobs:
           python3 aws/deploy.py smoke --template "$RUNNER_TEMP/report-stack.json"
       - name: Run benchmark ground-truth oracle, site simulator, and deployment trace tests
         run: |
-          if [ -d bench ] && [ -d tests ]; then
-            python3 -m unittest discover -s tests -v
-            python3 -m bench verify-cases
-            python3 -m bench aws-trace
-          fi
+          test -d bench && test -d tests
+          python3 -m unittest tests.test_benchmark_suite -v
+          python3 -m bench verify-cases
+          python3 -m bench aws-trace
