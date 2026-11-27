@@ -5,7 +5,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
+    "grading_rationale": "Valid secondary observation: changing cursor semantics from delivery id to scheduled_at breaks in-flight cursors saved before the upgrade.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -50,7 +50,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
+    "grading_rationale": "Valid secondary observation: ORDER BY scheduled_at DESC, id DESC performs a table scan and temp B-tree sort without a composite index.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -122,7 +122,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
+    "grading_rationale": "Valid secondary observation: ORDER BY scheduled_at DESC, id DESC performs a table scan and temp B-tree sort without a composite index.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -203,7 +203,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Valid secondary observation on cursor upgrade compatibility or composite index scan.",
+    "grading_rationale": "Valid secondary observation: changing cursor semantics from delivery id to scheduled_at breaks in-flight cursors saved before the upgrade.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -248,7 +248,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "grading_rationale": "Valid secondary observation: iterating the live SQLite cursor while streaming output holds a read lock and can leave a truncated export on error.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -437,7 +437,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "grading_rationale": "Valid secondary observation: reports.migrate() checks PRAGMA user_version before acquiring a write transaction, so concurrent migrations can race on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -509,7 +509,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "grading_rationale": "Valid secondary observation: reports.migrate() checks PRAGMA user_version before acquiring a write transaction, so concurrent migrations can race on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -599,7 +599,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "grading_rationale": "Valid secondary observation: reports.migrate() checks PRAGMA user_version before acquiring a write transaction, so concurrent migrations can race on DROP COLUMN.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1355,7 +1355,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "grading_rationale": "Valid secondary observation: retrying immediately on RuntimeError without backoff can exhaust all three attempts during a transient sink throttle.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {
@@ -1391,7 +1391,7 @@
     "cites_env_evidence": false,
     "identifies_affected_site": false,
     "verification_test": "tests/test_benchmark_suite.py",
-    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "grading_rationale": "Valid secondary observation: retrying immediately on RuntimeError without backoff can exhaust all three attempts during a transient sink throttle.",
     "graded_by": "oracle-blind-grader-v1"
   },
   {

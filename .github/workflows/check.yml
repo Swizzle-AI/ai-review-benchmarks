@@ -17,13 +17,15 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
+          fetch-depth: 0
       - name: Package the commit and smoke-test its Lambda handler
         run: |
           python3 aws/deploy.py package --output "$RUNNER_TEMP/report-stack.json"
           python3 aws/deploy.py smoke --template "$RUNNER_TEMP/report-stack.json"
       - name: Run benchmark ground-truth oracle, site simulator, and deployment trace tests
         run: |
-          test -d bench && test -d tests
+          test -d bench
+          test -d tests
           python3 -m unittest tests.test_benchmark_suite -v
           python3 -m bench verify-cases
           python3 -m bench aws-trace
