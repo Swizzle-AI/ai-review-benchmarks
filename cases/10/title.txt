@@ -1,0 +1,1 @@
+Reject negative timestamps when scheduling reports

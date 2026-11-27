@@ -1,0 +1,98 @@
+{
+  "attempt_id": "copilot:01:code_only:r1",
+  "base_sha": "360b5a1347b5ae907133a670c03b675ae33897b6",
+  "check_runs": [],
+  "collected_at": "2026-11-27T11:57:40.084761+00:00",
+  "head_sha": "09e5da24d6380c17aeab8313607916970e98c9ff",
+  "issue_comments": [],
+  "pr_number": 1,
+  "proofline_cli_result": null,
+  "repo_full_name": "Paramveersingh-S/arb-target-copilot-pro",
+  "review_comments": [],
+  "reviews": [
+    {
+      "_links": {
+        "html": {
+          "href": "https://github.com/Paramveersingh-S/arb-target-copilot-pro/pull/1#pullrequestreview-6087114706"
+        },
+        "pull_request": {
+          "href": "https://api.github.com/repos/Paramveersingh-S/arb-target-copilot-pro/pulls/1"
+        }
+      },
+      "author_association": "NONE",
+      "body": "Copilot was unable to review this pull request because the user who requested the review has insufficient remaining quota. Try requesting a review at a lower effort level.",
+      "commit_id": "09e5da24d6380c17aeab8313607916970e98c9ff",
+      "copilot_code_review_effort": null,
+      "html_url": "https://github.com/Paramveersingh-S/arb-target-copilot-pro/pull/1#pullrequestreview-6087114706",
+      "id": 6087114706,
+      "is_copilot_code_review": true,
+      "node_id": "PRR_kwDOV-BTSs8AAAABatH_0g",
+      "pull_request_url": "https://api.github.com/repos/Paramveersingh-S/arb-target-copilot-pro/pulls/1",
+      "state": "COMMENTED",
+      "submitted_at": "2026-11-27T10:58:47Z",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/in/946600?v=4",
+        "events_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/events{/privacy}",
+        "followers_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/apps/copilot-pull-request-reviewer",
+        "id": 175728472,
+        "login": "copilot-pull-request-reviewer[bot]",
+        "node_id": "BOT_kgDOCnlnWA",
+        "organizations_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/orgs",
+        "received_events_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/received_events",
+        "repos_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/subscriptions",
+        "type": "Bot",
+        "url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D",
+        "user_view_type": "public"
+      }
+    },
+    {
+      "_links": {
+        "html": {
+          "href": "https://github.com/Paramveersingh-S/arb-target-copilot-pro/pull/1#pullrequestreview-6087128403"
+        },
+        "pull_request": {
+          "href": "https://api.github.com/repos/Paramveersingh-S/arb-target-copilot-pro/pulls/1"
+        }
+      },
+      "author_association": "NONE",
+      "body": "Copilot was unable to review this pull request because the user who requested the review has insufficient remaining quota. Try requesting a review at a lower effort level.",
+      "commit_id": "09e5da24d6380c17aeab8313607916970e98c9ff",
+      "copilot_code_review_effort": null,
+      "html_url": "https://github.com/Paramveersingh-S/arb-target-copilot-pro/pull/1#pullrequestreview-6087128403",
+      "id": 6087128403,
+      "is_copilot_code_review": true,
+      "node_id": "PRR_kwDOV-BTSs8AAAABatI1Uw",
+      "pull_request_url": "https://api.github.com/repos/Paramveersingh-S/arb-target-copilot-pro/pulls/1",
+      "state": "COMMENTED",
+      "submitted_at": "2026-11-27T10:59:58Z",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/in/946600?v=4",
+        "events_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/events{/privacy}",
+        "followers_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/apps/copilot-pull-request-reviewer",
+        "id": 175728472,
+        "login": "copilot-pull-request-reviewer[bot]",
+        "node_id": "BOT_kgDOCnlnWA",
+        "organizations_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/orgs",
+        "received_events_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/received_events",
+        "repos_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D/subscriptions",
+        "type": "Bot",
+        "url": "https://api.github.com/users/copilot-pull-request-reviewer%5Bbot%5D",
+        "user_view_type": "public"
+      }
+    }
+  ]
+}

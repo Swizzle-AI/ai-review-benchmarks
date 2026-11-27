@@ -1,4 +1,4 @@
-name: Check the sample application
+name: Check the sample application and benchmark suite
 on:
   pull_request:
     branches: [main]
@@ -21,3 +21,10 @@ jobs:
         run: |
           python3 aws/deploy.py package --output "$RUNNER_TEMP/report-stack.json"
           python3 aws/deploy.py smoke --template "$RUNNER_TEMP/report-stack.json"
+      - name: Run benchmark ground-truth oracle, site simulator, and deployment trace tests
+        run: |
+          if [ -d bench ] && [ -d tests ]; then
+            python3 -m unittest discover -s tests -v
+            python3 -m bench verify-cases
+            python3 -m bench aws-trace
+          fi
