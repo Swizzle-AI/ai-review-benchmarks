@@ -98,7 +98,10 @@ def github_api(
 
 def ensure_private_repo(org: str, repo_name: str, token: str, description: str) -> dict[str, Any]:
     try:
-        return github_api("GET", f"/repos/{org}/{repo_name}", token)
+        repo_info = github_api("GET", f"/repos/{org}/{repo_name}", token)
+        if not repo_info.get("private", False):
+            raise RuntimeError(f"Refusing to provision benchmark target into non-private repository {org}/{repo_name}.")
+        return repo_info
     except RuntimeError as err:
         if "(404)" not in str(err):
             raise
@@ -143,6 +146,11 @@ def provision_provider_batch(
     target_repo = repo_name or f"arb-target-{provider_id}"
     full_repo = f"{org}/{target_repo}"
     conds = conditions or ["code_only", "with_snapshot"]
+    supported_conditions = {"code_only", "with_snapshot"}
+    invalid_conds = [c for c in conds if c not in supported_conditions]
+    if invalid_conds:
+        conn.close()
+        raise ValueError(f"Unsupported condition(s) {invalid_conds}; allowed: {sorted(supported_conditions)}")
     cases = load_cases(include_held_out=True)
     selected_cases = [c for c in sorted(cases.keys()) if (not case_filter or c in case_filter)]
 
@@ -202,6 +210,7 @@ def provision_provider_batch(
                 capture_output=True,
                 text=True,
                 env=env,
+                timeout=120,
             )
             return res.stdout.strip()
 
@@ -309,9 +318,7 @@ PROVIDER_BOT_TOKENS: dict[str, tuple[str, ...]] = {
 
 def matches_provider_actor(provider_id: str, login_or_slug: str) -> bool:
     actor = (login_or_slug or "").lower()
-    tokens = PROVIDER_BOT_TOKENS.get(provider_id)
-    if not tokens:
-        return True
+    tokens = PROVIDER_BOT_TOKENS.get(provider_id, (provider_id.lower(),))
     return any(tok in actor for tok in tokens)
 
 
@@ -355,8 +362,10 @@ def trigger_provider_reviews(
         else:
             # Close and reopen PR to fire pull_request.reopened / synchronize webhook for GitHub Apps like Proofline
             github_api("PATCH", f"/repos/{repo}/pulls/{pr_num}", token, {"state": "closed"})
-            time.sleep(1.0)
-            github_api("PATCH", f"/repos/{repo}/pulls/{pr_num}", token, {"state": "open"})
+            try:
+                time.sleep(1.0)
+            finally:
+                github_api("PATCH", f"/repos/{repo}/pulls/{pr_num}", token, {"state": "open"})
             triggered.append({"attempt_id": att["attempt_id"], "pr_number": pr_num, "trigger": "pr_reopen_webhook"})
         time.sleep(1.0)
     conn.close()
@@ -398,7 +407,10 @@ def collect_provider_reviews(
         check_runs = check_runs_resp.get("check_runs", []) if isinstance(check_runs_resp, dict) else []
 
         proofline_cli_result = None
-        proofline_exe = Path(r"D:\Projects\OSS\proofline-cli\proofline.exe")
+        import shutil as _shutil
+        env_pl = os.environ.get("PROOFLINE_BIN", "").strip()
+        which_pl = _shutil.which("proofline")
+        proofline_exe = Path(env_pl) if env_pl else (Path(which_pl) if which_pl else Path(r"D:\Projects\OSS\proofline-cli\proofline.exe"))
         if att["provider_id"] == "proofline" and proofline_exe.exists():
             pl_proc = subprocess.run(
                 [str(proofline_exe), "findings", "--repo", repo, "--pr", str(pr_num), "--json"],
@@ -524,6 +536,8 @@ def collect_provider_reviews(
             out = cr.get("output") or {}
             summary_text = "\n\n".join(filter(None, [out.get("title"), out.get("summary"), out.get("text")])).strip()
             if summary_text:
+                if any(q in summary_text.lower() for q in ("rate limit", "quota", "trial expired", "credits exhausted", "no credits remain")):
+                    quota_hit = True
                 cuid = f"check:{aid}:{cr['id']}"
                 if ingest_raw_comment(
                     conn,

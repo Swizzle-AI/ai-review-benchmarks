@@ -1,0 +1,166 @@
+{
+  "schema": "proofline.review-result.v1",
+  "outcome": "INCOMPLETE",
+  "review_url": "https://proofline.sh/orgs/by-id/01a21cad-e555-75b8-9d63-4ce0d8fb6539/reviews/01a21ce7-5884-72aa-a3f2-543f96a9e451",
+  "review": {
+    "merge_gate": null,
+    "linked_issues": {
+      "outcome": "SOURCE_UNAVAILABLE",
+      "captured_count": 0
+    },
+    "diff_stats": null,
+    "open_items_observation": {
+      "observed_at": "2026-11-27T12:10:46.093517Z",
+      "reviewed_head_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+      "current_head_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+      "current_head_provider_updated_at": "2026-11-27T12:09:36Z",
+      "head_state": "CURRENT",
+      "latest_review_head_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+      "latest_review_head_state": "CURRENT",
+      "is_latest_review": true,
+      "review_status": "INCOMPLETE",
+      "open_findings": {
+        "serious": 0,
+        "warning": 0
+      },
+      "accepted_risk_count": 0,
+      "evaluated_scope_known": false,
+      "environments": [],
+      "threads": {
+        "status": "KNOWN",
+        "unresolved_count": 0,
+        "observed_at": "2026-11-27T12:10:46.093517Z"
+      }
+    },
+    "change_diagram": {
+      "outcome": "INDEX_INCOMPLETE",
+      "kind": null,
+      "mermaid": null,
+      "legend": []
+    },
+    "repository_id": "01a21cad-e9a2-7555-8234-724fe3dcc4f1",
+    "current_head_commit_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+    "id": "01a21ce7-5884-72aa-a3f2-543f96a9e451",
+    "public_key": "rev_01a21ce7588472aaa3f2543f96a9e451",
+    "kind": "PULL_REQUEST",
+    "audit_mode": null,
+    "status": "INCOMPLETE",
+    "repository_name": "ai-review-benchmarks",
+    "repository_full_name": "Swizzle-AI/ai-review-benchmarks",
+    "repository_url": "https://github.com/Swizzle-AI/ai-review-benchmarks",
+    "pull_request_number": 1,
+    "run_number": 1,
+    "pull_request_title": "Operable Multi-Provider AI Review Benchmark Suite, Held-Out Cases 09–10, and Empirical Report",
+    "pull_request_author_github_user_id": 155875516,
+    "pull_request_author_login": "Paramveersingh-S",
+    "pull_request_author_name": "Paramveer singh",
+    "pull_request_author_url": "https://github.com/Paramveersingh-S",
+    "pull_request_author_avatar_url": "https://avatars.githubusercontent.com/u/155875516?v=4",
+    "requested_by": null,
+    "pull_request_state": "OPEN",
+    "pull_request_draft": false,
+    "pull_request_url": "https://github.com/Swizzle-AI/ai-review-benchmarks/pull/1",
+    "head_commit_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+    "head_commit_url": "https://github.com/Swizzle-AI/ai-review-benchmarks/commit/4208fe34d3077dca28841de35ee24aa8a29d16c5",
+    "assessment_count": 0,
+    "environment_display_names": [],
+    "finding_count": 0,
+    "trigger_origin": "AUTOMATIC",
+    "publication": "PUBLISHED",
+    "publication_detail": null,
+    "created_at": "2026-11-27T12:07:33.125724Z",
+    "completed_at": "2026-11-27T12:10:17.551995Z",
+    "refresh": null,
+    "incomplete_causes": [
+      "NOT_CONFIGURED"
+    ],
+    "counted_incomplete_causes": [
+      "NOT_CONFIGURED"
+    ],
+    "base_commit_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+    "base_commit_url": "https://github.com/Swizzle-AI/ai-review-benchmarks/commit/79d03777827b88aa23ee9309ebefab5f9766cd09",
+    "base_branch_commit_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+    "compare_url": "https://github.com/Swizzle-AI/ai-review-benchmarks/compare/79d03777827b88aa23ee9309ebefab5f9766cd09...4208fe34d3077dca28841de35ee24aa8a29d16c5",
+    "head_ref": "feat/multi-provider-ai-review-benchmark",
+    "base_ref": "main",
+    "check_run_url": "https://github.com/Swizzle-AI/ai-review-benchmarks/runs/140495520588",
+    "review_comment_url": null,
+    "review_retracted_at": null,
+    "superseded_by_review_id": null,
+    "trigger_source": null,
+    "stopped_by": null,
+    "stopped_at": null,
+    "stopped_from": null,
+    "provider_wait": null,
+    "run_progress": null,
+    "stoppable": false,
+    "related_reviews": [],
+    "subjects": [
+      {
+        "id": "01a21ce7-592c-7624-a981-9da983104f9b",
+        "kind": "GIT_REVISION",
+        "role": "PRIMARY",
+        "repository_id": "01a21cad-e9a2-7555-8234-724fe3dcc4f1",
+        "repository_full_name": "Swizzle-AI/ai-review-benchmarks",
+        "commit_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+        "patch_digest": null,
+        "workflow_run_id": null,
+        "workflow_attempt": null,
+        "artifact_digest": null,
+        "deployment_external_id": null,
+        "url": "https://github.com/Swizzle-AI/ai-review-benchmarks/commit/4208fe34d3077dca28841de35ee24aa8a29d16c5",
+        "release_authorizations": []
+      }
+    ],
+    "assessments": [],
+    "code_assessment": {
+      "id": "01a21ce7-65f5-7770-909c-d4e5fa50dd18",
+      "head_commit_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+      "base_commit_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+      "status": "INCOMPLETE",
+      "incompleteness_kind": "NOT_CONFIGURED",
+      "ceiling_stop": null,
+      "started_at": "2026-11-27T12:07:36.867454Z",
+      "completed_at": "2026-11-27T12:10:16.025400Z",
+      "findings": []
+    },
+    "environments": [
+      {
+        "environment_display_name": "Benchmark Review",
+        "environment_external_key": "benchmark-review",
+        "state": "NOT_CHECKED",
+        "reason": "NO_CLOUD_ACCOUNT"
+      }
+    ],
+    "open_items": {
+      "open_findings": 0,
+      "serious_findings": 0,
+      "accepted_risks": 0,
+      "not_assessed": []
+    },
+    "walkthrough": null,
+    "change_summary": {
+      "head_sha": "4208fe34d3077dca28841de35ee24aa8a29d16c5",
+      "base_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+      "files": [],
+      "route": null,
+      "prose_outcome": "NO_CHANGE_DIGEST",
+      "prose": null
+    },
+    "cost_microcredits": 94338690,
+    "review_cost_microcredits": 94338690,
+    "cost_funding": {
+      "plan_microcredits": 0,
+      "free_review_microcredits": 94338690,
+      "organization_microcredits": 0
+    },
+    "actions": {
+      "rerun": false,
+      "publish": false,
+      "promote_findings": false,
+      "stop": false,
+      "validate_findings": false,
+      "unavailable_reason": "READ_ONLY"
+    }
+  }
+}

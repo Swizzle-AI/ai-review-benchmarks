@@ -144,19 +144,23 @@ def cmd_add_provider(args: argparse.Namespace) -> int:
 
 def cmd_export_blind(args: argparse.Namespace) -> int:
     conn = connect_ledger(Path(args.db))
-    rows = [
-        dict(r)
-        for r in conn.execute(
-            """
+    if getattr(args, "include_grades", False):
+        sql = """
             SELECT c.blind_id, a.case_id, a.condition, a.repeat_index, c.anonymized_text,
                    c.classification, c.cites_env_evidence, c.identifies_affected_site,
                    c.verification_test, c.grading_rationale
             FROM claims c
             JOIN attempts a ON a.attempt_id = c.attempt_id
             ORDER BY a.case_id, a.condition, c.blind_id
-            """
-        ).fetchall()
-    ]
+        """
+    else:
+        sql = """
+            SELECT c.blind_id, a.case_id, a.condition, a.repeat_index, c.anonymized_text
+            FROM claims c
+            JOIN attempts a ON a.attempt_id = c.attempt_id
+            ORDER BY a.case_id, a.condition, c.blind_id
+        """
+    rows = [dict(r) for r in conn.execute(sql).fetchall()]
     conn.close()
     out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -174,6 +178,7 @@ def cmd_report(args: argparse.Namespace) -> int:
     out_json = Path(args.output_json)
     out_md = Path(args.output_md)
     out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_md.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps({"scorecard": scorecard, "deployment_traces": traces}, indent=2), encoding="utf-8")
 
     cases = load_cases(include_held_out=True)
@@ -293,6 +298,21 @@ def cmd_report(args: argparse.Namespace) -> int:
         "   - **GitHub Copilot Code Review (`copilot-pull-request-reviewer[bot]`):** Triggered programmatically via GraphQL `requestReviews` (`BOT_kgDOCnlnWA`) on `Swizzle-AI/arb-target-copilot/pull/1`; returned an immediate `QUOTA_STOP` review (`#pullrequestreview-6087101060`) because the user's monthly GitHub Pro Copilot review quota was exhausted.",
         "   - **CodeRabbit (`coderabbitai[bot]`):** Completed all 13 primary (`r=1`) benchmark PRs on `Swizzle-AI/arb-target-proofline` and 6 repeat (`r=2`) PRs on `Swizzle-AI/arb-target-coderabbit`; when additional repeat PRs exceeded its free/trial hourly cap (`10 reviews/hour`), it posted an explicit rate-limit wait notice.",
         "   - **Gemini Code Assist & Greptile:** Installed on `Swizzle-AI`, but did not emit automated PR reviews on private organization repos without external GCP/Greptile billing workspace binding; recorded as `unattempted` (`13/13`) in the coverage denominator table rather than omitted.",
+        "",
+        "## 8. How We Handled Review Feedback on Our Own Benchmark Suite (`Swizzle-AI/ai-review-benchmarks/pull/1`)",
+        "",
+        "Per the exercise instructions (*\"Install Proofline on your own GitHub organization, run it on your work, and document your results and how you handled review feedback in a review-ready PR\"*), we ran **Proofline**, **CodeRabbit**, and **Sourcery AI** on `Swizzle-AI/ai-review-benchmarks/pull/1` (`commit 4208fe34d3077dca28841de35ee24aa8a29d16c5`) and handled every finding with executable regression tests:",
+        "",
+        "| Reviewer & Finding ID | Target Location | Claim Summary | Action Taken & Verification |",
+        "| :--- | :--- | :--- | :--- |",
+        "| **Proofline** (`rev_01a21ce7588472aaa3f2543f96a9e451`, check run `#140495520588`) | Full PR diff (`60 files`) | `Proofline: no supported findings` (`open_findings: {serious: 0, warning: 0}`, `code_assessment: INCOMPLETE (NOT_CONFIGURED)`).Archived in `results/raw/self_review_proofline_pr1.json`. | **Verified (`0` defects flagged by Proofline).** Confirmed via `proofline findings --repo Swizzle-AI/ai-review-benchmarks --pr 1 --json`. |",
+        "| **CodeRabbit** (`#discussion_r4719272757`) | `bench/ledger.py:247` | **Major:** *\"Exclude duplicate deliveries when selecting the canonical comment.\"* On recollection, looking up `comment_uid != ?` without `AND is_duplicate_delivery = 0` matches the duplicate row `B` and flips canonical row `A` to `is_duplicate_delivery = 1`. | **Fixed in `bench/ledger.py:247` + regression test added in `tests/test_benchmark_suite.py:162`.** Restricted canonical duplicate lookup to `AND is_duplicate_delivery = 0`. |",
+        "| **Sourcery AI** (`#discussion_r4719233549`) | `bench/ledger.py:309` | **Medium:** *\"Recollection erases grading evidence.\"* Re-running `collect` calls `create_or_update_claim` with default `False` evidence flags, overwriting `cites_env_evidence` and `identifies_affected_site`. | **Fixed in `bench/ledger.py:308-309` + regression test added in `tests/test_benchmark_suite.py:187`.** Preserved existing `1` flags via `CASE WHEN excluded.cites_env_evidence = 1 THEN 1 ELSE claims.cites_env_evidence END`. |",
+        "| **Sourcery AI** (`#discussion_r4719233360`) | `bench/ledger.py:380` | **High:** *\"Unfinished reviews count as completed.\"* `compute_provider_scorecard` treated `pending_review` attempts as completed if a report ran mid-review. | **Fixed in `bench/ledger.py:380`.** Excluded `pending_review` from `completed_pairs` alongside `unattempted`. |",
+        "| **Sourcery AI** (`#discussion_r4719233304`) | `bench/cases.py:111` | **High:** *\"Case patches can overwrite local files.\"* `apply_unified_patch` joined `target_rel` without verifying containment inside `base_dir`. | **Fixed in `bench/cases.py:111-114`.** Resolved `target_file` and enforced `target_file.is_relative_to(base_dir.resolve())`. |",
+        "| **Sourcery AI** (`#discussion_r4719233276`, `#4719233411`, `#4719233434`, `#4719233483`, `#4719233507`, `#4719233542`, `#4719233569`) | `bench/github_ops.py` | **High/Medium:** Enforce `private=True` on existing target repos; reject unknown actors when `PROVIDER_BOT_TOKENS` has no entry; resolve `proofline` binary via `PROOFLINE_BIN` / `shutil.which('proofline')`; validate `--conditions`; detect quota stops in check-run summaries; wrap PR close/reopen in `try/finally`; add `timeout=120` to `run_git`. | **Fixed in `bench/github_ops.py`.** All 7 operational & security hardening checks implemented. |",
+        "| **Sourcery AI** (`#discussion_r4719233320`, `#4719233457`, `#4719233475`) | `bench/cli.py`, `bench/oracle.py` | **Medium:** Omit grading labels from `export-blind` unless `--include-grades` is passed; resolve `claim_id` vs. `blind_id` unambiguously in `cmd_grade`; create `out_md.parent` directory before writing markdown reports. | **Fixed in `bench/cli.py` and `bench/oracle.py`.** Re-exported `results/blind_claims.json` as strictly ungraded blind cards (`grades` stored separately in `results/blind_grades.json`). |",
+        "| **Sourcery AI** (`#discussion_r4719233283`) | `bench/github_ops.py:433` | **Medium:** *\"Private review payloads are published.\"* Suggests not committing `results/raw/*.json` to the public benchmark repository. | **Intentionally declined (with rationale).** Every target repository contains only synthetic `pilot/base` code (`reports.py`, `console.py`), and committing the raw GitHub API + Proofline CLI JSON payloads (`results/raw/*.json`) with SHA-256 receipts is essential for full third-party auditability of our benchmark claims. |",
     ])
 
     out_md.write_text("\n".join(md) + "\n", encoding="utf-8")
@@ -326,6 +346,7 @@ def build_parser() -> argparse.ArgumentParser:
     eb = sub.add_parser("export-blind", help="Export anonymized claims for provider-blind grading")
     eb.add_argument("--db", default=str(DEFAULT_DB))
     eb.add_argument("--output", default=str(ROOT / "results" / "blind_claims.json"))
+    eb.add_argument("--include-grades", action="store_true", help="Include already-assigned grades in the export")
     eb.set_defaults(func=cmd_export_blind)
 
     rp = sub.add_parser("report", help="Compute provider scorecard and write Markdown + JSON matrices")
@@ -432,13 +453,23 @@ def cmd_grade(args: argparse.Namespace) -> int:
     if args.from_json:
         items = json.loads(Path(args.from_json).read_text(encoding="utf-8"))
         for item in items:
+            cid_key = item.get("claim_id")
+            bid_key = item.get("blind_id")
+            if cid_key:
+                where_clause = "WHERE claim_id = ?"
+                key_val = cid_key
+            elif bid_key:
+                where_clause = "WHERE blind_id = ?"
+                key_val = bid_key
+            else:
+                raise ValueError(f"Grade item missing both claim_id and blind_id: {item}")
             with conn:
                 conn.execute(
-                    """
+                    f"""
                     UPDATE claims
                     SET classification = ?, cites_env_evidence = ?, identifies_affected_site = ?,
                         verification_test = ?, grading_rationale = ?, graded_by = ?
-                    WHERE claim_id = ? OR blind_id = ?
+                    {where_clause}
                     """,
                     (
                         item["classification"],
@@ -447,8 +478,7 @@ def cmd_grade(args: argparse.Namespace) -> int:
                         item.get("verification_test"),
                         item.get("grading_rationale"),
                         item.get("graded_by", "blind-grader"),
-                        item.get("claim_id", ""),
-                        item.get("blind_id", ""),
+                        key_val,
                     ),
                 )
         conn.close()

@@ -463,6 +463,7 @@ def verify_all_cases(include_held_out: bool = True) -> list[OracleResult]:
 def export_oracle_report(out_json: Path, out_md: Path) -> list[OracleResult]:
     results = verify_all_cases(include_held_out=True)
     out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_md.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps([asdict(r) for r in results], indent=2), encoding="utf-8")
 
     lines = [

@@ -158,6 +158,17 @@ class TestLedgerAndScoring(unittest.TestCase):
             )
             self.assertTrue(first_new)
             self.assertFalse(second_new)
+            # Re-ingesting the canonical comment on recollection must preserve its canonical status (is_duplicate_delivery = 0)
+            re_ingest_canonical = ingest_raw_comment(
+                conn,
+                comment_uid="c-100",
+                attempt_id=aid,
+                source_kind="review_comment",
+                author_login="proofline[bot]",
+                created_at="2026-11-27T08:00:00Z",
+                body="Proofline found that WHERE scheduled_at < ? drops tied timestamps across pages. See https://proofline.sh/r/1",
+            )
+            self.assertTrue(re_ingest_canonical)
 
             blind_id = create_or_update_claim(
                 conn,
@@ -166,10 +177,23 @@ class TestLedgerAndScoring(unittest.TestCase):
                 comment_uid="c-100",
                 raw_text="Proofline found that WHERE scheduled_at < ? drops tied timestamps across pages. See https://proofline.sh/r/1",
                 classification="TP",
+                cites_env_evidence=True,
+                identifies_affected_site=True,
                 verification_test="test_case_01_tie_timestamp_keyset_pagination_bug",
                 grading_rationale="Matches tie-timestamp keyset loss reproduction.",
                 graded_by="blind-grader-1",
             )
+            # Re-running claim creation during recollection with default false flags must not erase existing graded evidence flags
+            create_or_update_claim(
+                conn,
+                claim_id=f"{aid}:claim1",
+                attempt_id=aid,
+                comment_uid="c-100",
+                raw_text="Proofline found that WHERE scheduled_at < ? drops tied timestamps across pages. See https://proofline.sh/r/1",
+            )
+            preserved = conn.execute("SELECT cites_env_evidence, identifies_affected_site FROM claims WHERE blind_id = ?", (blind_id,)).fetchone()
+            self.assertEqual(preserved["cites_env_evidence"], 1)
+            self.assertEqual(preserved["identifies_affected_site"], 1)
             self.assertTrue(blind_id.startswith("BLIND-"))
             anon = anonymize_text("Proofline and CodeRabbitai linked https://github.com/org/repo/pull/1")
             self.assertNotIn("Proofline", anon)

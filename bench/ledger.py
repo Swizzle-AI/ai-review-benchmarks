@@ -244,7 +244,7 @@ def ingest_raw_comment(
     norm = normalize_comment_body(body)
     norm_sha = hashlib.sha256(norm.encode("utf-8")).hexdigest()
     existing = conn.execute(
-        "SELECT comment_uid FROM raw_comments WHERE attempt_id = ? AND body_norm_sha256 = ? AND comment_uid != ?",
+        "SELECT comment_uid FROM raw_comments WHERE attempt_id = ? AND body_norm_sha256 = ? AND comment_uid != ? AND is_duplicate_delivery = 0",
         (attempt_id, norm_sha, comment_uid),
     ).fetchone()
     is_dup = 1 if existing is not None else 0
@@ -305,8 +305,8 @@ def create_or_update_claim(
             ON CONFLICT(claim_id) DO UPDATE SET
                 anonymized_text=excluded.anonymized_text,
                 classification=COALESCE(excluded.classification, claims.classification),
-                cites_env_evidence=excluded.cites_env_evidence,
-                identifies_affected_site=excluded.identifies_affected_site,
+                cites_env_evidence=CASE WHEN excluded.cites_env_evidence = 1 THEN 1 ELSE claims.cites_env_evidence END,
+                identifies_affected_site=CASE WHEN excluded.identifies_affected_site = 1 THEN 1 ELSE claims.identifies_affected_site END,
                 verification_test=COALESCE(excluded.verification_test, claims.verification_test),
                 grading_rationale=COALESCE(excluded.grading_rationale, claims.grading_rationale),
                 graded_by=COALESCE(excluded.graded_by, claims.graded_by)
@@ -376,8 +376,8 @@ def compute_provider_scorecard(conn: sqlite3.Connection) -> dict[str, Any]:
                 if cond == "with_snapshot" and exp_snap is None:
                     continue
                 att = att_lookup.get((pid, cid, cond, 1))
-                if att is None or att["terminal_status"] == "unattempted":
-                    matrix[pid][cond][cid] = {"status": "unattempted", "outcome": "—"}
+                if att is None or att["terminal_status"] in ("unattempted", "pending_review"):
+                    matrix[pid][cond][cid] = {"status": att["terminal_status"] if att else "unattempted", "outcome": "—"}
                     unattempted += 1
                     continue
                 st = att["terminal_status"]

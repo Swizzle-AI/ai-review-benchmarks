@@ -108,7 +108,10 @@ def apply_unified_patch(base_dir: Path, patch_text: str) -> None:
         target_rel = new_path or old_path
         if not target_rel:
             raise ValueError(f"Malformed patch header near line {i}")
-        target_file = base_dir / target_rel
+        base_resolved = base_dir.resolve()
+        target_file = (base_dir / target_rel).resolve()
+        if not target_file.is_relative_to(base_resolved):
+            raise ValueError(f"Refusing to apply patch path outside base_dir: {target_rel}")
         orig_lines = (
             target_file.read_text(encoding="utf-8").splitlines()
             if (old_path is not None and target_file.exists())
