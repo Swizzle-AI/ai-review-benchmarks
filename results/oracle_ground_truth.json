@@ -1,0 +1,473 @@
+[
+  {
+    "case_id": "01",
+    "title": "Page report history by scheduled time",
+    "is_held_out": false,
+    "category": "code_defect",
+    "defect_confirmed": true,
+    "expected_code_only": "TP",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "Scalar cursor WHERE scheduled_at < 1700000000 drops tied-timestamp rows across page boundaries: enqueued 3 reports at t=1700000000 (ids=[3, 2, 1]), page1 returned [3, 2], page2 returned [], permanently dropping id=[1].",
+    "reproduction_proof": {
+      "enqueued_ids_at_same_second": [
+        3,
+        2,
+        1
+      ],
+      "page1_rows": [
+        [
+          3,
+          "Report-C",
+          1700000000
+        ],
+        [
+          2,
+          "Report-B",
+          1700000000
+        ]
+      ],
+      "page1_next_cursor": 1700000000,
+      "page2_rows": [],
+      "dropped_delivery_ids": [
+        1
+      ],
+      "lambda_smoke_response": {
+        "commit": "case-01",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  },
+  {
+    "case_id": "02",
+    "title": "Stream the report export",
+    "is_held_out": false,
+    "category": "code_defect",
+    "defect_confirmed": true,
+    "expected_code_only": "TP",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "Replacing csv.writer with ','.join(map(str, row)) breaks RFC-4180 CSV escaping: 'Orders, EMEA' splits into 4 columns (['1', 'Orders', ' EMEA', '1700000000']), corrupting downstream parsers.",
+    "reproduction_proof": {
+      "raw_csv_output": "id,report,scheduled_at\n1,Orders, EMEA,1700000000\n2,VIP \"Gold\" Report,1700000001\n",
+      "rfc4180_parsed_rows": [
+        [
+          "id",
+          "report",
+          "scheduled_at"
+        ],
+        [
+          "1",
+          "Orders",
+          " EMEA",
+          "1700000000"
+        ],
+        [
+          "2",
+          "VIP \"Gold\" Report",
+          "1700000001"
+        ]
+      ],
+      "corrupted_rows": [
+        [
+          "1",
+          "Orders",
+          " EMEA",
+          "1700000000"
+        ]
+      ],
+      "lambda_smoke_response": {
+        "commit": "case-02",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  },
+  {
+    "case_id": "03",
+    "title": "Batch queued deliveries",
+    "is_held_out": false,
+    "category": "code_defect",
+    "defect_confirmed": true,
+    "expected_code_only": "TP",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [],
+    "lambda_smoke_passed": false,
+    "lambda_smoke_detail": "verify_response mismatch: {\"delivered_this_run\": {\"expected\": 1, \"actual\": 0}, \"receipt_at\": {\"expected\": 101, \"actual\": null}, \"summary\": {\"expected\": {\"delivered\": 1, \"pending\": 0}, \"actual\": {\"delivered\": 0, \"pending\": 1}}}",
+    "summary_finding": "range(0, len(jobs) - 20 + 1, 20) ignores any remainder len(jobs) % 20: for 1 due job it delivers 0/1 (breaking aws/deploy.py smoke/verify!), and for 25 due jobs it delivers 20/25 leaving 5 jobs stranded pending.",
+    "reproduction_proof": {
+      "single_job_delivered": 0,
+      "single_job_summary": {
+        "delivered": 0,
+        "pending": 1
+      },
+      "twenty_five_jobs_delivered": 20,
+      "twenty_five_jobs_summary": {
+        "delivered": 20,
+        "pending": 5
+      },
+      "lambda_smoke_response": {
+        "commit": "case-03",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 0,
+        "receipt_at": null,
+        "summary": {
+          "delivered": 0,
+          "pending": 1
+        }
+      }
+    }
+  },
+  {
+    "case_id": "04",
+    "title": "Retire the legacy delivery column",
+    "is_held_out": false,
+    "category": "env_dependent",
+    "defect_confirmed": true,
+    "expected_code_only": "ENV-ASK",
+    "expected_with_snapshot": "ENV-TP",
+    "affected_sites": [
+      "elm"
+    ],
+    "healthy_sites": [
+      "cedar"
+    ],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "SQLite 3.45.1 executes ALTER TABLE deliveries DROP COLUMN legacy_format cleanly, and site 'cedar' (workers-18) succeeds, but site 'elm' still runs 2 replicas of workers-17 issuing 'SELECT id, legacy_format FROM deliveries WHERE delivered_at IS NULL' (inventory-204), failing online with 'OperationalError: no such column: legacy_format'.",
+    "reproduction_proof": {
+      "sqlite_version": "3.45.1",
+      "observation_id": "inventory-204",
+      "site_outcomes": {
+        "elm": [
+          {
+            "revision": "workers-17",
+            "replicas": 2,
+            "status": "error",
+            "error": "no such column: legacy_format"
+          },
+          {
+            "revision": "workers-18",
+            "replicas": 3,
+            "status": "ok",
+            "rows": 1
+          }
+        ],
+        "cedar": [
+          {
+            "revision": "workers-18",
+            "replicas": 4,
+            "status": "ok",
+            "rows": 1
+          }
+        ]
+      },
+      "lambda_smoke_response": {
+        "commit": "case-04",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  },
+  {
+    "case_id": "05",
+    "title": "Increase export batch size",
+    "is_held_out": false,
+    "category": "env_dependent",
+    "defect_confirmed": true,
+    "expected_code_only": "ENV-ASK",
+    "expected_with_snapshot": "ENV-TP",
+    "affected_sites": [
+      "cedar"
+    ],
+    "healthy_sites": [
+      "elm"
+    ],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "Increasing EXPORT_BATCH_SIZE from 25 to 50 succeeds on site 'elm' (archive-12, max_rows_per_request=100, batches=[50, 20]), but fails on site 'cedar' (archive-11, max_rows_per_request=40 in archive-318), where the 50-row request is rejected in full.",
+    "reproduction_proof": {
+      "observation_id": "archive-318",
+      "export_batch_size": 50,
+      "site_outcomes": {
+        "elm": {
+          "status": "ok",
+          "batches": [
+            50,
+            20
+          ],
+          "total_archived": 70
+        },
+        "cedar": {
+          "status": "rejected",
+          "error": "archive-11 rejected request: batch size 50 > max_rows_per_request 40",
+          "batches_before_failure": []
+        }
+      },
+      "lambda_smoke_response": {
+        "commit": "case-05",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  },
+  {
+    "case_id": "06",
+    "title": "Use the new delivery queue",
+    "is_held_out": false,
+    "category": "env_dependent",
+    "defect_confirmed": true,
+    "expected_code_only": "ENV-ASK",
+    "expected_with_snapshot": "ENV-TP",
+    "affected_sites": [
+      "elm"
+    ],
+    "healthy_sites": [
+      "cedar"
+    ],
+    "lambda_smoke_passed": false,
+    "lambda_smoke_detail": "verify_response mismatch: {\"delivered_this_run\": {\"expected\": 1, \"actual\": 0}, \"receipt_at\": {\"expected\": 101, \"actual\": null}, \"summary\": {\"expected\": {\"delivered\": 1, \"pending\": 0}, \"actual\": {\"delivered\": 0, \"pending\": 1}}}",
+    "summary_finding": "Routing new deliveries to DELIVERY_QUEUE='report-dispatch' works on site 'cedar' (subscribed to ['reports', 'report-dispatch'], 8/8 delivered), but strands all 8 due jobs on site 'elm' (subscribed only to ['reports'] in subscriptions-416) and also fails aws/deploy.py smoke (which polls queue='reports').",
+    "reproduction_proof": {
+      "observation_id": "subscriptions-416",
+      "delivery_queue": "report-dispatch",
+      "site_outcomes": {
+        "elm": {
+          "subscribed_queues": [
+            "reports"
+          ],
+          "delivered": 0,
+          "summary": {
+            "delivered": 0,
+            "pending": 8
+          }
+        },
+        "cedar": {
+          "subscribed_queues": [
+            "reports",
+            "report-dispatch"
+          ],
+          "delivered": 8,
+          "summary": {
+            "delivered": 8,
+            "pending": 0
+          }
+        }
+      },
+      "lambda_smoke_response": {
+        "commit": "case-06",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 0,
+        "receipt_at": null,
+        "summary": {
+          "delivered": 0,
+          "pending": 1
+        }
+      }
+    }
+  },
+  {
+    "case_id": "07",
+    "title": "Index pending deliveries",
+    "is_held_out": false,
+    "category": "clean",
+    "defect_confirmed": false,
+    "expected_code_only": "TN",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [
+      "elm",
+      "cedar"
+    ],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "Clean optimization (TN): partial index deliveries_due_by_queue ON deliveries (queue, scheduled_at, id) WHERE delivered_at IS NULL converts full table SCAN + TEMP B-TREE sort into a single COVERING INDEX seek.",
+    "reproduction_proof": {
+      "baseline_query_plan": [
+        "SCAN deliveries",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "patched_query_plan": [
+        "SEARCH deliveries USING INDEX deliveries_due_by_queue (queue=? AND scheduled_at<?)"
+      ],
+      "uses_covering_index": true,
+      "eliminates_temp_btree_sort": true,
+      "lambda_smoke_response": {
+        "commit": "case-07",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  },
+  {
+    "case_id": "08",
+    "title": "Include a total in the activity summary",
+    "is_held_out": false,
+    "category": "clean",
+    "defect_confirmed": false,
+    "expected_code_only": "TN",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [
+      "elm",
+      "cedar"
+    ],
+    "lambda_smoke_passed": false,
+    "lambda_smoke_detail": "verify_response mismatch: {\"summary\": {\"expected\": {\"delivered\": 1, \"pending\": 0}, \"actual\": {\"delivered\": 1, \"pending\": 0, \"total\": 1}}}",
+    "summary_finding": "Clean additive change on pilot/base (TN): summary(db) returns {'delivered': sent, 'pending': waiting, 'total': sent + waiting} (count() is always int >= 0, never NULL). Note: on main, aws/deploy.py:56 checks exact dict equality expected['summary'] == {'delivered': 1, 'pending': 0}, so deploy.py verify requires updating expected['summary'] in lockstep.",
+    "reproduction_proof": {
+      "empty_table_summary": {
+        "delivered": 0,
+        "pending": 0,
+        "total": 0
+      },
+      "populated_table_summary": {
+        "delivered": 1,
+        "pending": 1,
+        "total": 2
+      },
+      "pilot_base_additive_safe": true,
+      "lambda_smoke_response": {
+        "commit": "case-08",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0,
+          "total": 1
+        }
+      }
+    }
+  },
+  {
+    "case_id": "09",
+    "title": "Retry archive batches on transient sink errors",
+    "is_held_out": true,
+    "category": "code_defect",
+    "defect_confirmed": true,
+    "expected_code_only": "TP",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "Held-out defect (TP): calling list(islice(rows, EXPORT_BATCH_SIZE)) inside the retry loop pulls the NEXT 25 rows from the SQLite cursor when attempt 1 raises RuntimeError, silently dropping the failed first batch (ids 1..25 lost; only 35/60 rows archived).",
+    "reproduction_proof": {
+      "total_scheduled": 60,
+      "total_archived_after_one_transient_retry": 35,
+      "dropped_row_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "lambda_smoke_response": {
+        "commit": "case-09",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  },
+  {
+    "case_id": "10",
+    "title": "Reject negative timestamps when scheduling reports",
+    "is_held_out": true,
+    "category": "clean",
+    "defect_confirmed": false,
+    "expected_code_only": "TN",
+    "expected_with_snapshot": null,
+    "affected_sites": [],
+    "healthy_sites": [
+      "elm",
+      "cedar"
+    ],
+    "lambda_smoke_passed": true,
+    "lambda_smoke_detail": "Lambda smoke handler and verify_response passed",
+    "summary_finding": "Held-out clean control (TN): rejecting scheduled_at < 0 raises ValueError before opening a write transaction and preserves behavior for all valid Unix timestamps (>= 0).",
+    "reproduction_proof": {
+      "rejected_negative_timestamp": true,
+      "valid_inserts_count": 2,
+      "clean_behavior_verified": true,
+      "lambda_smoke_response": {
+        "commit": "case-10",
+        "request_id": "local-smoke",
+        "report": "Weekly orders",
+        "delivered_this_run": 1,
+        "receipt_at": 101,
+        "summary": {
+          "delivered": 1,
+          "pending": 0
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,605 @@
+{
+  "attempt_id": "coderabbit:05:code_only:r1",
+  "base_sha": "04a2554b8a9e42e5ee91179ebd6c97af725f61c8",
+  "check_runs": [
+    {
+      "app": {
+        "client_id": "Iv1.6aaafe4fe882736b",
+        "created_at": "2023-06-14T15:47:27Z",
+        "description": "# Transforming Code Reviews with AI\r\n\r\n## Features\r\n\r\n**Automated Reviews**: Continuous reviews of the pull requests including incremental commits. \r\n\r\n**Summarization**: Generates high-level summary and a technical walkthrough of the PR changes.\u00a0\r\n\r\n**Line-by-line review**: Provides line-by-line suggestions committable with one click.\r\n\r\n**Codebase verification**:  Verifies the impact on the overall codebase and identifies missing changes.\r\n\r\n**Insights into your code**:  Ask any questions on your codebase within the pull request \r\n\r\n**Chat about your code** : Chat with the bot around your code.\u00a0The more you chat, the smarter it gets.\r\n\r\n**Issue Validation**:  Validates the PR against the linked issues and identifies other related issues\u00a0\r\n\r\n\r\n\r\n",
+        "events": [
+          "check_run",
+          "issues",
+          "issue_comment",
+          "label",
+          "membership",
+          "merge_group",
+          "organization",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "pull_request_review_thread",
+          "release",
+          "repository",
+          "team"
+        ],
+        "external_url": "https://coderabbit.ai?utm_source=cr_app&utm_medium=github",
+        "html_url": "https://github.com/apps/coderabbitai",
+        "id": 347564,
+        "name": "coderabbitai",
+        "node_id": "A_kwHOB96YWc4ABU2s",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/132028505?v=4",
+          "events_url": "https://api.github.com/users/coderabbitai/events{/privacy}",
+          "followers_url": "https://api.github.com/users/coderabbitai/followers",
+          "following_url": "https://api.github.com/users/coderabbitai/following{/other_user}",
+          "gists_url": "https://api.github.com/users/coderabbitai/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/coderabbitai",
+          "id": 132028505,
+          "login": "coderabbitai",
+          "node_id": "O_kgDOB96YWQ",
+          "organizations_url": "https://api.github.com/users/coderabbitai/orgs",
+          "received_events_url": "https://api.github.com/users/coderabbitai/received_events",
+          "repos_url": "https://api.github.com/users/coderabbitai/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/coderabbitai/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/coderabbitai/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/coderabbitai",
+          "user_view_type": "public"
+        },
+        "permissions": {
+          "actions": "read",
+          "checks": "write",
+          "contents": "write",
+          "discussions": "read",
+          "issues": "write",
+          "members": "read",
+          "merge_queues": "read",
+          "metadata": "read",
+          "pull_requests": "write",
+          "statuses": "write",
+          "workflows": "write"
+        },
+        "slug": "coderabbitai",
+        "updated_at": "2026-11-01T03:09:41Z"
+      },
+      "check_suite": {
+        "id": 124427401869
+      },
+      "completed_at": "2026-11-27T11:47:08Z",
+      "conclusion": "success",
+      "details_url": "https://app.coderabbit.ai/change-stack/Swizzle-AI/arb-target-proofline/pull/7?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA",
+      "external_id": "coderabbit-review-progress-v1:a2182fd0f2490bbc8057d8ab735e739930a82c0161e90a51befc8cb07f47e5a1",
+      "head_sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe",
+      "html_url": "https://github.com/Swizzle-AI/arb-target-proofline/runs/140485503954",
+      "id": 140485503954,
+      "name": "CodeRabbit",
+      "node_id": "CR_kwDOV-BHOM8AAAAgtZar0g",
+      "output": {
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/check-runs/140485503954/annotations",
+        "summary": "Result: Success - Review completed\nRun ID: `73dcec2b-a151-42dd-9407-283f11d125bf`\nCodeRabbit Review: [Open CodeRabbit Review](https://app.coderabbit.ai/change-stack/Swizzle-AI/arb-target-proofline/pull/7?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA)\n\n| Step | Status | Time |\n| --- | --- | --- |\n| Prepare review scope | Completed | 6s 656ms |\n| Prepare repository workspace | Completed | 332ms |\n| Run analysis checks | Completed | 36s 431ms |\n| Generate review feedback | Completed | 59s 991ms |\n| Publish review results | Completed | 3s 576ms |\n| Time taken | | 1m 47s 186ms |",
+        "text": null,
+        "title": "Finished"
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "main",
+            "repo": {
+              "id": 1474316088,
+              "name": "arb-target-proofline",
+              "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline"
+            },
+            "sha": "04a2554b8a9e42e5ee91179ebd6c97af725f61c8"
+          },
+          "head": {
+            "ref": "case-05-code_only-r1",
+            "repo": {
+              "id": 1474316088,
+              "name": "arb-target-proofline",
+              "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline"
+            },
+            "sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe"
+          },
+          "id": 5526062864,
+          "number": 7,
+          "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/pulls/7"
+        }
+      ],
+      "started_at": "2026-11-27T11:45:27Z",
+      "status": "completed",
+      "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/check-runs/140485503954"
+    },
+    {
+      "app": {
+        "client_id": "Iv1.25d1242251bb3f02",
+        "created_at": "2019-12-06T13:02:12Z",
+        "description": "## Instant AI code reviews\r\n\r\n- Speed up your code review process\r\n- Improve your code quality and ensure high quality code\r\n- Spend less time on reviews\r\n- Accelerate development velocity",
+        "events": [
+          "issue_comment",
+          "member",
+          "membership",
+          "organization",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "repository"
+        ],
+        "external_url": "https://sourcery.ai",
+        "html_url": "https://github.com/apps/sourcery-ai",
+        "id": 48477,
+        "name": "Sourcery AI",
+        "node_id": "MDM6QXBwNDg0Nzc=",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/36609879?v=4",
+          "events_url": "https://api.github.com/users/sourcery-ai/events{/privacy}",
+          "followers_url": "https://api.github.com/users/sourcery-ai/followers",
+          "following_url": "https://api.github.com/users/sourcery-ai/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sourcery-ai/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/sourcery-ai",
+          "id": 36609879,
+          "login": "sourcery-ai",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjM2NjA5ODc5",
+          "organizations_url": "https://api.github.com/users/sourcery-ai/orgs",
+          "received_events_url": "https://api.github.com/users/sourcery-ai/received_events",
+          "repos_url": "https://api.github.com/users/sourcery-ai/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/sourcery-ai/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sourcery-ai/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/sourcery-ai",
+          "user_view_type": "public"
+        },
+        "permissions": {
+          "actions": "write",
+          "checks": "write",
+          "contents": "write",
+          "emails": "read",
+          "issues": "write",
+          "members": "read",
+          "metadata": "read",
+          "pull_requests": "write",
+          "statuses": "write",
+          "workflows": "write"
+        },
+        "slug": "sourcery-ai",
+        "updated_at": "2026-11-23T15:08:14Z"
+      },
+      "check_suite": {
+        "id": 124427402371
+      },
+      "completed_at": "2026-11-27T11:46:51Z",
+      "conclusion": "success",
+      "details_url": "https://github.com/Swizzle-AI/arb-target-proofline/pull/7#pullrequestreview-6087650350",
+      "external_id": "",
+      "head_sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe",
+      "html_url": "https://github.com/Swizzle-AI/arb-target-proofline/runs/140485482720",
+      "id": 140485482720,
+      "name": "Sourcery review",
+      "node_id": "CR_kwDOV-BHOM8AAAAgtZZY4A",
+      "output": {
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/check-runs/140485482720/annotations",
+        "summary": "Sourcery completed the review and found no blocking security issues\n\n<!--\n<agent_instructions>\nSourcery reviewed this pull request: https://github.com/Swizzle-AI/arb-target-proofline/pull/7#pullrequestreview-6087650350. Handle the review as follows:\n1. Triage every unresolved Sourcery review comment on this pull request: fix the issue, or reply to the comment with the reason you are not fixing it.\n2. Sourcery re-reviews the first 5 pushes to this pull request automatically; 5 automatic re-reviews remain. After each push, wait for the `Sourcery review` check again and read its summary. When a review raises nothing new to fix, you are done.\n</agent_instructions>\n-->",
+        "text": null,
+        "title": "\u2705 Completed successfully"
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "main",
+            "repo": {
+              "id": 1474316088,
+              "name": "arb-target-proofline",
+              "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline"
+            },
+            "sha": "04a2554b8a9e42e5ee91179ebd6c97af725f61c8"
+          },
+          "head": {
+            "ref": "case-05-code_only-r1",
+            "repo": {
+              "id": 1474316088,
+              "name": "arb-target-proofline",
+              "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline"
+            },
+            "sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe"
+          },
+          "id": 5526062864,
+          "number": 7,
+          "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/pulls/7"
+        }
+      ],
+      "started_at": "2026-11-27T11:45:24Z",
+      "status": "completed",
+      "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/check-runs/140485482720"
+    },
+    {
+      "app": {
+        "client_id": "Iv23lieSzVosCVhEq3Va",
+        "created_at": "2026-08-18T14:23:12Z",
+        "description": "# Review code against production\r\n\r\nProofline reviews pull requests against the infrastructure they will deploy into, so you can find evidence-backed deployment risks, inspect the evidence, and see what remains unknown.\r\n\r\n## Evidence behind each finding\r\n\r\nProofline connects your code change to a read-only snapshot of your cloud and checks the constraints between the change and that infrastructure. It then publishes supported findings in GitHub, along with the evidence behind each one.\r\n\r\n## Your infrastructure stays under your control\r\n\r\nInfrastructure integrations are read-only. You choose which repositories to connect and how to address the findings.\r\n\r\n## FREE Code Reviews\r\n\r\nGet one month of [free code review](https://proofline.sh/blog/free-ai-code-review) for private repositories, or free code review for public repositories.\r\n\r\n\r\n",
+        "events": [
+          "check_run",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_protection_rule",
+          "deployment_review",
+          "deployment_status",
+          "issues",
+          "issue_comment",
+          "label",
+          "member",
+          "membership",
+          "merge_group",
+          "organization",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "pull_request_review_thread",
+          "push",
+          "repository",
+          "status",
+          "team",
+          "workflow_job",
+          "workflow_run"
+        ],
+        "external_url": "https://proofline.sh",
+        "html_url": "https://github.com/apps/prooflinedev",
+        "id": 4636559,
+        "name": "ProoflineDev",
+        "node_id": "A_kwHOEwuTac4ARr-P",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/319525737?v=4",
+          "events_url": "https://api.github.com/users/prooflinedev/events{/privacy}",
+          "followers_url": "https://api.github.com/users/prooflinedev/followers",
+          "following_url": "https://api.github.com/users/prooflinedev/following{/other_user}",
+          "gists_url": "https://api.github.com/users/prooflinedev/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/prooflinedev",
+          "id": 319525737,
+          "login": "prooflinedev",
+          "node_id": "O_kgDOEwuTaQ",
+          "organizations_url": "https://api.github.com/users/prooflinedev/orgs",
+          "received_events_url": "https://api.github.com/users/prooflinedev/received_events",
+          "repos_url": "https://api.github.com/users/prooflinedev/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/prooflinedev/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/prooflinedev/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/prooflinedev",
+          "user_view_type": "public"
+        },
+        "permissions": {
+          "actions": "read",
+          "attestations": "read",
+          "checks": "write",
+          "contents": "write",
+          "deployments": "write",
+          "emails": "read",
+          "issues": "write",
+          "members": "read",
+          "merge_queues": "read",
+          "metadata": "read",
+          "pull_requests": "write",
+          "statuses": "read"
+        },
+        "slug": "prooflinedev",
+        "updated_at": "2026-11-27T09:07:17Z"
+      },
+      "check_suite": {
+        "id": 124427401329
+      },
+      "completed_at": "2026-11-27T11:45:28Z",
+      "conclusion": "success",
+      "details_url": "https://proofline.sh/orgs/by-id/01a21cad-e555-75b8-9d63-4ce0d8fb6539/reviews/01a21cd2-f3c2-77d4-9d28-f78eb1996b61",
+      "external_id": "proofline-pr-head:01a21cad-e555-75b8-9d63-4ce0d8fb6539:01a21cad-e9ad-7402-ba81-ec8f4fb8d6e6:7:3565c2c2f0b5aabee915f8459fe17044d18e5dbe",
+      "head_sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe",
+      "html_url": "https://github.com/Swizzle-AI/arb-target-proofline/runs/140485441283",
+      "id": 140485441283,
+      "name": "Proofline",
+      "node_id": "CR_kwDOV-BHOM8AAAAgtZW3Aw",
+      "output": {
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/check-runs/140485441283/annotations",
+        "summary": "No new findings in this review.\n\n[View review details](https://proofline.sh/orgs/by-id/01a21cad-e555-75b8-9d63-4ce0d8fb6539/reviews/01a21cd2-f3c2-77d4-9d28-f78eb1996b61)\n\n",
+        "text": null,
+        "title": "Proofline review finished: no new findings"
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "main",
+            "repo": {
+              "id": 1474316088,
+              "name": "arb-target-proofline",
+              "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline"
+            },
+            "sha": "04a2554b8a9e42e5ee91179ebd6c97af725f61c8"
+          },
+          "head": {
+            "ref": "case-05-code_only-r1",
+            "repo": {
+              "id": 1474316088,
+              "name": "arb-target-proofline",
+              "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline"
+            },
+            "sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe"
+          },
+          "id": 5526062864,
+          "number": 7,
+          "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/pulls/7"
+        }
+      ],
+      "started_at": "2026-11-27T11:45:16Z",
+      "status": "completed",
+      "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/check-runs/140485441283"
+    }
+  ],
+  "collected_at": "2026-11-27T11:56:45.198978+00:00",
+  "head_sha": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe",
+  "issue_comments": [
+    {
+      "author_association": "NONE",
+      "body": "<!-- Generated by sourcery-ai[bot]: start review_guide -->\n\n## Reviewer's Guide\n\n### Implementation\n\nIncrease the export batch size from 25 to 50 records so full exports require fewer archive requests.\n- `reports.py` L10\n\n---\n\n<details>\n<summary>Tips and commands</summary>\n\n#### Interacting with Sourcery\n\n- **Trigger a new review:** Comment `@sourcery-ai review` on the pull request.\n- **Continue discussions:** Reply directly to Sourcery's review comments.\n- **Generate a GitHub issue from a review comment:** Ask Sourcery to create an\n  issue from a review comment by replying to it. You can also reply to a\n  review comment with `@sourcery-ai issue` to create an issue from it.\n- **Generate a pull request title:** Write `@sourcery-ai` anywhere in the pull\n  request title to generate a title at any time. You can also comment\n  `@sourcery-ai title` on the pull request to (re-)generate the title at any time.\n- **Generate a pull request summary:** Write `@sourcery-ai summary` anywhere in\n  the pull request body to generate a PR summary at any time exactly where you\n  want it. You can also comment `@sourcery-ai summary` on the pull request to\n  (re-)generate the summary at any time.\n- **Generate reviewer's guide:** Comment `@sourcery-ai guide` on the pull\n  request to (re-)generate the reviewer's guide at any time.\n- **Resolve all Sourcery comments:** Comment `@sourcery-ai resolve` on the\n  pull request to resolve all Sourcery comments. Useful if you've already\n  addressed all the comments and don't want to see them anymore.\n- **Dismiss all Sourcery reviews:** Comment `@sourcery-ai dismiss` on the pull\n  request to dismiss all existing Sourcery reviews. Especially useful if you\n  want to start fresh with a new review - don't forget to comment\n  `@sourcery-ai review` to trigger a new review!\n\n#### Customizing Your Experience\n\nAccess your [dashboard](https://app.sourcery.ai/dashboard/review-settings?connection=github&owner=Swizzle-AI&from_surface=github_bot&intent=review_settings) to:\n- Enable or disable review features such as the Sourcery-generated pull request\n  summary, the reviewer's guide, and others.\n- Change the review language.\n- Add, remove or edit custom review instructions.\n- Adjust other review settings.\n\n#### Getting Help\n\n- [Contact our support team](mailto:support@sourcery.ai) for questions or feedback.\n- Visit our [documentation](https://docs.sourcery.ai) for detailed guides and information.\n- Keep in touch with the Sourcery team by following us on [X/Twitter](https://x.com/SourceryAI), [LinkedIn](https://www.linkedin.com/company/sourcery-ai/) or [GitHub](https://github.com/sourcery-ai).\n\n</details>\n\n<!-- Generated by sourcery-ai[bot]: end review_guide -->",
+      "created_at": "2026-11-27T11:45:21Z",
+      "html_url": "https://github.com/Swizzle-AI/arb-target-proofline/pull/7#issuecomment-7217437341",
+      "id": 7217437341,
+      "issue_url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/issues/7",
+      "minimized": null,
+      "node_id": "IC_kwDOV-BHOM8AAAABrjFanQ",
+      "performed_via_github_app": {
+        "client_id": "Iv1.25d1242251bb3f02",
+        "created_at": "2019-12-06T13:02:12Z",
+        "description": "## Instant AI code reviews\r\n\r\n- Speed up your code review process\r\n- Improve your code quality and ensure high quality code\r\n- Spend less time on reviews\r\n- Accelerate development velocity",
+        "events": [
+          "issue_comment",
+          "member",
+          "membership",
+          "organization",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "repository"
+        ],
+        "external_url": "https://sourcery.ai",
+        "html_url": "https://github.com/apps/sourcery-ai",
+        "id": 48477,
+        "name": "Sourcery AI",
+        "node_id": "MDM6QXBwNDg0Nzc=",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/36609879?v=4",
+          "events_url": "https://api.github.com/users/sourcery-ai/events{/privacy}",
+          "followers_url": "https://api.github.com/users/sourcery-ai/followers",
+          "following_url": "https://api.github.com/users/sourcery-ai/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sourcery-ai/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/sourcery-ai",
+          "id": 36609879,
+          "login": "sourcery-ai",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjM2NjA5ODc5",
+          "organizations_url": "https://api.github.com/users/sourcery-ai/orgs",
+          "received_events_url": "https://api.github.com/users/sourcery-ai/received_events",
+          "repos_url": "https://api.github.com/users/sourcery-ai/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/sourcery-ai/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sourcery-ai/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/sourcery-ai",
+          "user_view_type": "public"
+        },
+        "permissions": {
+          "actions": "write",
+          "checks": "write",
+          "contents": "write",
+          "emails": "read",
+          "issues": "write",
+          "members": "read",
+          "metadata": "read",
+          "pull_requests": "write",
+          "statuses": "write",
+          "workflows": "write"
+        },
+        "slug": "sourcery-ai",
+        "updated_at": "2026-11-23T15:08:14Z"
+      },
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/issues/comments/7217437341/reactions"
+      },
+      "updated_at": "2026-11-27T11:45:26Z",
+      "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/issues/comments/7217437341",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/in/48477?v=4",
+        "events_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/events{/privacy}",
+        "followers_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/apps/sourcery-ai",
+        "id": 58596630,
+        "login": "sourcery-ai[bot]",
+        "node_id": "MDM6Qm90NTg1OTY2MzA=",
+        "organizations_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/orgs",
+        "received_events_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/received_events",
+        "repos_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/subscriptions",
+        "type": "Bot",
+        "url": "https://api.github.com/users/sourcery-ai%5Bbot%5D",
+        "user_view_type": "public"
+      }
+    },
+    {
+      "author_association": "NONE",
+      "body": "<!-- coderabbit-ai-generated:v1 -->\n\n<!-- This is an auto-generated comment: summarize by coderabbit.ai -->\n<!-- review_stack_entry_start -->\n\n<a href=\"https://app.coderabbit.ai/change-stack/Swizzle-AI/arb-target-proofline/pull/7?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA&amp;cs_source=review_comment\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-stack-buttons-v1/explain-change-dark.svg\"><source media=\"(prefers-color-scheme: light)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-stack-buttons-v1/explain-change.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-stack-buttons-v1/explain-change.svg\" alt=\"Explain Change \u2192\" height=\"32\"></picture></a>\n\n<!-- review_stack_entry_end -->\n<!-- recent_review_status_start -->\n\nNo actionable comments were generated in the recent review.\n\n<!-- recent_review_status_end -->\n<!-- walkthrough_start -->\n\n<details>\n<summary><strong>Walkthrough</strong></summary>\n<dl>\n<dd>\n<br>\n\n<!-- coderabbit_walkthrough_overview_removed -->\n\n**Changes: Export Batch Size**\n\n|Layer / File(s)|Summary|\n|:---|:---|\n|**Update export batch limit** <br> `reports.py`|`EXPORT_BATCH_SIZE` changes from 25 to 50. `export_to_sink` can send up to 50 rows per batch.|\n\n**Possibly related PRs**\n\n- [Swizzle-AI/arb-target-coderabbit#10](https://github.com/Swizzle-AI/arb-target-coderabbit/pull/10): This PR also uses a 50-row batch size. Its deployment snapshot sets a 40-row sink limit and rejects larger requests.\n\n</dd>\n</dl>\n</details>\n\n<!-- walkthrough_end -->\n<!-- change_assessment_start -->\n<!-- change_assessment_commit:\"3565c2c2f0b5aabee915f8459fe17044d18e5dbe\" -->\n<!-- change_assessment_priority:{\"version\":1,\"urgency\":\"p3\",\"manual\":false} -->\n**Change:** Feature\n<!-- change_assessment_end -->\n<details>\n<summary><strong>Merge Risk:</strong> <strong><picture><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/risk-unassessed-16.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Minimal</strong> \u00b7 up to <code>3565c</code></summary>\n<dl>\n<dd>\n<br>\n\n<!-- final_review_risk_start -->\n<!-- final_review_risk_label\n**Merge Risk:** **\u26aa Minimal** \u00b7 up to `3565c`\n-->\n<!-- final_review_risk_coverage:{\"sourceCommitId\":\"3565c2c2f0b5aabee915f8459fe17044d18e5dbe\",\"coveredCommitId\":\"3565c2c2f0b5aabee915f8459fe17044d18e5dbe\",\"kind\":\"reviewed\"} -->\n\nExport batches now hold up to 50 rows instead of 25, so a full export needs fewer calls. No actionable merge risk was found, and the change is trivially reversible.\n<!-- final_review_risk_end -->\n\n</dd>\n</dl>\n</details>\n\n<details>\n<summary><strong>Security architecture risk:</strong> <strong><picture><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/risk-unassessed-16.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Minimal</strong> \u00b7 up to <code>3565c</code></summary>\n<dl>\n<dd>\n<br>\n\n<!-- architecture_review_start -->\n<!-- architecture_review_label\n### Security Architecture Review\n\n**Security architecture risk:** **\u26aa Minimal** \u00b7 up to `3565c`\n-->\n\nThe archive emits the same records in the same order, but groups them into larger JSON lines. The change does not expand access to report data or change how it is stored. Consumers that rely on the old 25-row limit may need to adjust.\n\n**Retained concerns**\nNo architecture-level concerns identified.\n\n<details>\n<summary><strong>Security review details</strong></summary>\n<dl>\n<dd>\n<br>\n\n**Security Blast Radius**\n- _observed_ \u2014 On the inspected archive path, the change increases the number of rows in a single output line without changing the database selection, exported fields, command, or output destination.\n\n</dd>\n</dl>\n</details>\n<!-- architecture_review_end -->\n\n</dd>\n</dl>\n</details>\n<!-- finishing_touch_checkbox_start -->\n\n<details>\n<summary><strong>Finishing Touches</strong></summary>\n<dl>\n<dd>\n<br>\n\n<details open>\n<summary><strong>Generate unit tests (beta)</strong></summary>\n<dl>\n<dd>\n<br>\n\n- [ ] <!-- {\"checkboxId\": \"6ba7b810-9dad-11d1-80b4-00c04fd430c8\", \"radioGroupId\": \"utg-output-choice-group-unknown_comment_id\"} --> Commit to this branch\n- [ ] <!-- {\"checkboxId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\", \"radioGroupId\": \"utg-output-choice-group-unknown_comment_id\"} --> Create a new PR\n\n</dd>\n</dl>\n</details>\n\n</dd>\n</dl>\n</details>\n\n<!-- finishing_touch_checkbox_end -->\n\n<!-- autopilot:start -->\n- [ ] <!-- {\"checkboxId\":\"2708ad07-9f24-4260-9c11-7dc76a49f2e3\"} --> <strong title=\"Keep fixing CodeRabbit findings and required CI, and resolving merge conflicts\">Autofix</strong> \u00b7 Keep fixing CodeRabbit findings and required CI, and resolving merge conflicts\n<!-- autopilot:end -->\n### Usage-based review receipt\n\n- Mode: Continue automatically\n- Reviewed files: 1\n- Waived: $0.25 (charged $0.00)\n- [View usage details](https://app.coderabbit.ai/settings/billing?tab=usage&orgId=334995ad-ca7f-4af0-ae3a-2e4b3b5457c7)\n\n> [!NOTE]\n> This review exceeded your plan\u2019s limits and used usage-based reviews\u2014free during trial, billed after paid activation unless disabled. [**Manage usage-based reviews**](https://app.coderabbit.ai/settings/billing?tab=usage&orgId=334995ad-ca7f-4af0-ae3a-2e4b3b5457c7).\n<!-- recent_review_start -->\n\n<h6>\n<details>\n<summary><strong><picture><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/info.svg\" width=\"12\" height=\"12\" align=\"absmiddle\" alt=\"\"></picture> Recent review info</strong></summary>\n<dl>\n<dd>\n<br>\n\n<!-- review_info_content -->\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/cog-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/cog.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Run configuration</strong></summary>\n<dl>\n<dd>\n<br>\n\n- **Source mode**: Auto\n- **Repository**: Unavailable\n- **Branch**: Unavailable\n- **File**: No configuration file from this repository applied\n- **Commit**: Unavailable\n- **Layers**: defaults\n- **Review profile**: CHILL\n- **Plan**: Advanced\n- **Run ID**: `e9caa9b8-dc3f-4ca2-9b2e-89ef0a838a9b`\n\n</dd>\n</dl>\n</details>\n\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/git-commit-horizontal-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/git-commit-horizontal.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Commits</strong></summary>\n<dl>\n<dd>\n<br>\n\nReviewing files that changed from the base of the PR and between 04a2554b8a9e42e5ee91179ebd6c97af725f61c8 and 3565c2c2f0b5aabee915f8459fe17044d18e5dbe.\n\n</dd>\n</dl>\n</details>\n\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/file-plus-corner-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/file-plus-corner.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Files selected for processing: 1</strong></summary>\n<dl>\n<dd>\n<br>\n\n* `reports.py`\n\n</dd>\n</dl>\n</details>\n\n**Limit details:** You\u2019ve used all 10 included reviews currently available.\n\n</dd>\n</dl>\n</details>\n</h6>\n\n<!-- recent_review_end -->",
+      "created_at": "2026-11-27T11:45:26Z",
+      "html_url": "https://github.com/Swizzle-AI/arb-target-proofline/pull/7#issuecomment-7217438778",
+      "id": 7217438778,
+      "issue_url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/issues/7",
+      "minimized": null,
+      "node_id": "IC_kwDOV-BHOM8AAAABrjFgOg",
+      "performed_via_github_app": {
+        "client_id": "Iv1.6aaafe4fe882736b",
+        "created_at": "2023-06-14T15:47:27Z",
+        "description": "# Transforming Code Reviews with AI\r\n\r\n## Features\r\n\r\n**Automated Reviews**: Continuous reviews of the pull requests including incremental commits. \r\n\r\n**Summarization**: Generates high-level summary and a technical walkthrough of the PR changes.\u00a0\r\n\r\n**Line-by-line review**: Provides line-by-line suggestions committable with one click.\r\n\r\n**Codebase verification**:  Verifies the impact on the overall codebase and identifies missing changes.\r\n\r\n**Insights into your code**:  Ask any questions on your codebase within the pull request \r\n\r\n**Chat about your code** : Chat with the bot around your code.\u00a0The more you chat, the smarter it gets.\r\n\r\n**Issue Validation**:  Validates the PR against the linked issues and identifies other related issues\u00a0\r\n\r\n\r\n\r\n",
+        "events": [
+          "check_run",
+          "issues",
+          "issue_comment",
+          "label",
+          "membership",
+          "merge_group",
+          "organization",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "pull_request_review_thread",
+          "release",
+          "repository",
+          "team"
+        ],
+        "external_url": "https://coderabbit.ai?utm_source=cr_app&utm_medium=github",
+        "html_url": "https://github.com/apps/coderabbitai",
+        "id": 347564,
+        "name": "coderabbitai",
+        "node_id": "A_kwHOB96YWc4ABU2s",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/132028505?v=4",
+          "events_url": "https://api.github.com/users/coderabbitai/events{/privacy}",
+          "followers_url": "https://api.github.com/users/coderabbitai/followers",
+          "following_url": "https://api.github.com/users/coderabbitai/following{/other_user}",
+          "gists_url": "https://api.github.com/users/coderabbitai/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/coderabbitai",
+          "id": 132028505,
+          "login": "coderabbitai",
+          "node_id": "O_kgDOB96YWQ",
+          "organizations_url": "https://api.github.com/users/coderabbitai/orgs",
+          "received_events_url": "https://api.github.com/users/coderabbitai/received_events",
+          "repos_url": "https://api.github.com/users/coderabbitai/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/coderabbitai/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/coderabbitai/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/coderabbitai",
+          "user_view_type": "public"
+        },
+        "permissions": {
+          "actions": "read",
+          "checks": "write",
+          "contents": "write",
+          "discussions": "read",
+          "issues": "write",
+          "members": "read",
+          "merge_queues": "read",
+          "metadata": "read",
+          "pull_requests": "write",
+          "statuses": "write",
+          "workflows": "write"
+        },
+        "slug": "coderabbitai",
+        "updated_at": "2026-11-01T03:09:41Z"
+      },
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/issues/comments/7217438778/reactions"
+      },
+      "updated_at": "2026-11-27T11:47:04Z",
+      "url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/issues/comments/7217438778",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/in/347564?v=4",
+        "events_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/events{/privacy}",
+        "followers_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/apps/coderabbitai",
+        "id": 136622811,
+        "login": "coderabbitai[bot]",
+        "node_id": "BOT_kgDOCCSy2w",
+        "organizations_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/orgs",
+        "received_events_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/received_events",
+        "repos_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/coderabbitai%5Bbot%5D/subscriptions",
+        "type": "Bot",
+        "url": "https://api.github.com/users/coderabbitai%5Bbot%5D",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "pr_number": 7,
+  "proofline_cli_result": null,
+  "repo_full_name": "Swizzle-AI/arb-target-proofline",
+  "review_comments": [],
+  "reviews": [
+    {
+      "_links": {
+        "html": {
+          "href": "https://github.com/Swizzle-AI/arb-target-proofline/pull/7#pullrequestreview-6087650350"
+        },
+        "pull_request": {
+          "href": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/pulls/7"
+        }
+      },
+      "author_association": "NONE",
+      "body": "Hey - I've reviewed your changes and they look great!\n\n### Sourcery assessment\n\n**Approved.**\n\n***\n\nYour trial expires on December 11, 2026. Please [upgrade](https://app.sourcery.ai/dashboard/billing?connection=github&owner=Swizzle-AI&from_surface=github_bot&intent=trial_upgrade) to continue using Sourcery \u2728\n\n<!--\n<agent_instructions>\nSourcery reviewed this pull request. Handle the review as follows:\n1. Triage every unresolved Sourcery review comment on this pull request: fix the issue, or reply to the comment with the reason you are not fixing it.\n2. Sourcery re-reviews the first 5 pushes to this pull request automatically; 5 automatic re-reviews remain. After each push, wait for the `Sourcery review` check again and read its summary. When a review raises nothing new to fix, you are done.\n</agent_instructions>\n-->",
+      "commit_id": "3565c2c2f0b5aabee915f8459fe17044d18e5dbe",
+      "copilot_code_review_effort": null,
+      "html_url": "https://github.com/Swizzle-AI/arb-target-proofline/pull/7#pullrequestreview-6087650350",
+      "id": 6087650350,
+      "is_copilot_code_review": false,
+      "node_id": "PRR_kwDOV-BHOM8AAAABatosLg",
+      "pull_request_url": "https://api.github.com/repos/Swizzle-AI/arb-target-proofline/pulls/7",
+      "state": "APPROVED",
+      "submitted_at": "2026-11-27T11:46:50Z",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/in/48477?v=4",
+        "events_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/events{/privacy}",
+        "followers_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/apps/sourcery-ai",
+        "id": 58596630,
+        "login": "sourcery-ai[bot]",
+        "node_id": "MDM6Qm90NTg1OTY2MzA=",
+        "organizations_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/orgs",
+        "received_events_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/received_events",
+        "repos_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/sourcery-ai%5Bbot%5D/subscriptions",
+        "type": "Bot",
+        "url": "https://api.github.com/users/sourcery-ai%5Bbot%5D",
+        "user_view_type": "public"
+      }
+    }
+  ]
+}

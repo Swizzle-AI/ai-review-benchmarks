@@ -1,0 +1,1003 @@
+{
+  "scorecard": {
+    "providers": {
+      "coderabbit": {
+        "provider_id": "coderabbit",
+        "display_name": "CodeRabbit",
+        "plan_or_model": "14-day Pro trial",
+        "completed_pairs": 13,
+        "quota_stops": 0,
+        "errors": 0,
+        "unattempted": 0,
+        "repeat_runs_completed": 6,
+        "code_defect_recall": "4/4",
+        "code_defect_recall_rate": 1.0,
+        "env_snapshot_accuracy": "3/3",
+        "env_snapshot_accuracy_rate": 1.0,
+        "epistemic_caution_code_only": "1/3",
+        "epistemic_caution_rate": 0.333,
+        "clean_case_specificity": "3/3",
+        "clean_case_specificity_rate": 1.0,
+        "claim_precision": "8/8",
+        "claim_precision_rate": 1.0,
+        "duplicate_claims": 8,
+        "repeat_consistency": "4/6"
+      },
+      "copilot": {
+        "provider_id": "copilot",
+        "display_name": "GitHub Copilot Code Review",
+        "plan_or_model": "GitHub Pro / Student Developer Pack",
+        "completed_pairs": 0,
+        "quota_stops": 1,
+        "errors": 0,
+        "unattempted": 12,
+        "repeat_runs_completed": 0,
+        "code_defect_recall": "0/0",
+        "code_defect_recall_rate": null,
+        "env_snapshot_accuracy": "0/0",
+        "env_snapshot_accuracy_rate": null,
+        "epistemic_caution_code_only": "0/0",
+        "epistemic_caution_rate": null,
+        "clean_case_specificity": "0/0",
+        "clean_case_specificity_rate": null,
+        "claim_precision": "0/0",
+        "claim_precision_rate": null,
+        "duplicate_claims": 0,
+        "repeat_consistency": "0/0"
+      },
+      "gemini-code-assist": {
+        "provider_id": "gemini-code-assist",
+        "display_name": "Gemini Code Assist",
+        "plan_or_model": "Google Gemini Code Assist free GitHub App",
+        "completed_pairs": 0,
+        "quota_stops": 0,
+        "errors": 0,
+        "unattempted": 13,
+        "repeat_runs_completed": 0,
+        "code_defect_recall": "0/0",
+        "code_defect_recall_rate": null,
+        "env_snapshot_accuracy": "0/0",
+        "env_snapshot_accuracy_rate": null,
+        "epistemic_caution_code_only": "0/0",
+        "epistemic_caution_rate": null,
+        "clean_case_specificity": "0/0",
+        "clean_case_specificity_rate": null,
+        "claim_precision": "0/0",
+        "claim_precision_rate": null,
+        "duplicate_claims": 0,
+        "repeat_consistency": "0/0"
+      },
+      "greptile": {
+        "provider_id": "greptile",
+        "display_name": "Greptile",
+        "plan_or_model": "Starter trial allowance",
+        "completed_pairs": 0,
+        "quota_stops": 0,
+        "errors": 0,
+        "unattempted": 13,
+        "repeat_runs_completed": 0,
+        "code_defect_recall": "0/0",
+        "code_defect_recall_rate": null,
+        "env_snapshot_accuracy": "0/0",
+        "env_snapshot_accuracy_rate": null,
+        "epistemic_caution_code_only": "0/0",
+        "epistemic_caution_rate": null,
+        "clean_case_specificity": "0/0",
+        "clean_case_specificity_rate": null,
+        "claim_precision": "0/0",
+        "claim_precision_rate": null,
+        "duplicate_claims": 0,
+        "repeat_consistency": "0/0"
+      },
+      "proofline": {
+        "provider_id": "proofline",
+        "display_name": "Proofline",
+        "plan_or_model": "1-month free org trial (20,000 credits)",
+        "completed_pairs": 13,
+        "quota_stops": 0,
+        "errors": 0,
+        "unattempted": 0,
+        "repeat_runs_completed": 5,
+        "code_defect_recall": "0/4",
+        "code_defect_recall_rate": 0.0,
+        "env_snapshot_accuracy": "0/3",
+        "env_snapshot_accuracy_rate": 0.0,
+        "epistemic_caution_code_only": "2/3",
+        "epistemic_caution_rate": 0.667,
+        "clean_case_specificity": "3/3",
+        "clean_case_specificity_rate": 1.0,
+        "claim_precision": "2/2",
+        "claim_precision_rate": 1.0,
+        "duplicate_claims": 2,
+        "repeat_consistency": "5/5"
+      },
+      "sourcery": {
+        "provider_id": "sourcery",
+        "display_name": "Sourcery AI",
+        "plan_or_model": "Free / 14-day Pro trial",
+        "completed_pairs": 13,
+        "quota_stops": 0,
+        "errors": 0,
+        "unattempted": 0,
+        "repeat_runs_completed": 6,
+        "code_defect_recall": "4/4",
+        "code_defect_recall_rate": 1.0,
+        "env_snapshot_accuracy": "3/3",
+        "env_snapshot_accuracy_rate": 1.0,
+        "epistemic_caution_code_only": "1/3",
+        "epistemic_caution_rate": 0.333,
+        "clean_case_specificity": "1/3",
+        "clean_case_specificity_rate": 0.333,
+        "claim_precision": "14/16",
+        "claim_precision_rate": 0.875,
+        "duplicate_claims": 11,
+        "repeat_consistency": "6/6"
+      }
+    },
+    "matrix": {
+      "coderabbit": {
+        "code_only": {
+          "01": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 2,
+            "claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "02": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 3,
+            "claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "03": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 4,
+            "claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "04": {
+            "status": "completed",
+            "outcome": "MISS",
+            "pr_number": 5,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "05": {
+            "status": "completed",
+            "outcome": "MISS",
+            "pr_number": 7,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "06": {
+            "status": "completed",
+            "outcome": "ENV-ASK",
+            "pr_number": 9,
+            "claims": [
+              "META",
+              "ENV-ASK",
+              "META",
+              "DUP"
+            ]
+          },
+          "07": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 11,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "08": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 12,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "09": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 13,
+            "claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "10": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 14,
+            "claims": [
+              "META",
+              "META"
+            ]
+          }
+        },
+        "with_snapshot": {
+          "04": {
+            "status": "completed",
+            "outcome": "ENV-TP",
+            "pr_number": 6,
+            "claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "05": {
+            "status": "completed",
+            "outcome": "ENV-TP",
+            "pr_number": 8,
+            "claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "06": {
+            "status": "completed",
+            "outcome": "ENV-TP",
+            "pr_number": 10,
+            "claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ]
+          }
+        },
+        "repeat_r2": {
+          "01:code_only": {
+            "r1_claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "04:with_snapshot": {
+            "r1_claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "05:code_only": {
+            "r1_claims": [
+              "META",
+              "META"
+            ],
+            "r2_claims": [
+              "META",
+              "META"
+            ],
+            "consistent": true
+          },
+          "05:with_snapshot": {
+            "r1_claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "META",
+              "DUP"
+            ],
+            "consistent": false
+          },
+          "09:code_only": {
+            "r1_claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "10:code_only": {
+            "r1_claims": [
+              "META",
+              "META"
+            ],
+            "r2_claims": [
+              "META",
+              "FP",
+              "META",
+              "DUP"
+            ],
+            "consistent": false
+          }
+        }
+      },
+      "copilot": {
+        "code_only": {
+          "01": {
+            "status": "quota_stopped",
+            "outcome": "QUOTA_STOP"
+          },
+          "02": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "03": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "04": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "05": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "06": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "07": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "08": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "09": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "10": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          }
+        },
+        "with_snapshot": {
+          "04": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "05": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "06": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          }
+        },
+        "repeat_r2": {}
+      },
+      "gemini-code-assist": {
+        "code_only": {
+          "01": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "02": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "03": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "04": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "05": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "06": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "07": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "08": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "09": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "10": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          }
+        },
+        "with_snapshot": {
+          "04": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "05": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "06": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          }
+        },
+        "repeat_r2": {}
+      },
+      "greptile": {
+        "code_only": {
+          "01": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "02": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "03": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "04": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "05": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "06": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "07": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "08": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "09": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "10": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          }
+        },
+        "with_snapshot": {
+          "04": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "05": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          },
+          "06": {
+            "status": "unattempted",
+            "outcome": "\u2014"
+          }
+        },
+        "repeat_r2": {}
+      },
+      "proofline": {
+        "code_only": {
+          "01": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 2,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "02": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 3,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "03": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 4,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "04": {
+            "status": "completed",
+            "outcome": "ENV-ASK",
+            "pr_number": 5,
+            "claims": [
+              "DUP",
+              "META",
+              "ENV-ASK"
+            ]
+          },
+          "05": {
+            "status": "completed",
+            "outcome": "MISS",
+            "pr_number": 7,
+            "claims": [
+              "META"
+            ]
+          },
+          "06": {
+            "status": "completed",
+            "outcome": "ENV-ASK",
+            "pr_number": 9,
+            "claims": [
+              "DUP",
+              "ENV-ASK"
+            ]
+          },
+          "07": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 11,
+            "claims": [
+              "META",
+              "META",
+              "META"
+            ]
+          },
+          "08": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 12,
+            "claims": [
+              "META"
+            ]
+          },
+          "09": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 13,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "10": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 14,
+            "claims": [
+              "META"
+            ]
+          }
+        },
+        "with_snapshot": {
+          "04": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 6,
+            "claims": [
+              "META",
+              "META",
+              "META"
+            ]
+          },
+          "05": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 8,
+            "claims": [
+              "META",
+              "META"
+            ]
+          },
+          "06": {
+            "status": "completed",
+            "outcome": "FN",
+            "pr_number": 10,
+            "claims": [
+              "META",
+              "META"
+            ]
+          }
+        },
+        "repeat_r2": {
+          "04:with_snapshot": {
+            "r1_claims": [
+              "META",
+              "META",
+              "META"
+            ],
+            "r2_claims": [
+              "META",
+              "META",
+              "META"
+            ],
+            "consistent": true
+          },
+          "05:code_only": {
+            "r1_claims": [
+              "META"
+            ],
+            "r2_claims": [
+              "META"
+            ],
+            "consistent": true
+          },
+          "05:with_snapshot": {
+            "r1_claims": [
+              "META",
+              "META"
+            ],
+            "r2_claims": [
+              "META",
+              "META"
+            ],
+            "consistent": true
+          },
+          "09:code_only": {
+            "r1_claims": [
+              "META",
+              "META"
+            ],
+            "r2_claims": [
+              "META",
+              "META"
+            ],
+            "consistent": true
+          },
+          "10:code_only": {
+            "r1_claims": [
+              "META"
+            ],
+            "r2_claims": [
+              "META"
+            ],
+            "consistent": true
+          }
+        }
+      },
+      "sourcery": {
+        "code_only": {
+          "01": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 2,
+            "claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ]
+          },
+          "02": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 3,
+            "claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ]
+          },
+          "03": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 4,
+            "claims": [
+              "META",
+              "TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "04": {
+            "status": "completed",
+            "outcome": "MISS",
+            "pr_number": 5,
+            "claims": [
+              "META",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ]
+          },
+          "05": {
+            "status": "completed",
+            "outcome": "MISS",
+            "pr_number": 7,
+            "claims": [
+              "META",
+              "META",
+              "META"
+            ]
+          },
+          "06": {
+            "status": "completed",
+            "outcome": "ENV-ASK",
+            "pr_number": 9,
+            "claims": [
+              "META",
+              "ENV-ASK",
+              "META",
+              "DUP"
+            ]
+          },
+          "07": {
+            "status": "completed",
+            "outcome": "FP",
+            "pr_number": 11,
+            "claims": [
+              "META",
+              "FP",
+              "META",
+              "DUP"
+            ]
+          },
+          "08": {
+            "status": "completed",
+            "outcome": "TN",
+            "pr_number": 12,
+            "claims": [
+              "META",
+              "META",
+              "META"
+            ]
+          },
+          "09": {
+            "status": "completed",
+            "outcome": "TP",
+            "pr_number": 13,
+            "claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ]
+          },
+          "10": {
+            "status": "completed",
+            "outcome": "FP",
+            "pr_number": 14,
+            "claims": [
+              "META",
+              "FP",
+              "META",
+              "DUP"
+            ]
+          }
+        },
+        "with_snapshot": {
+          "04": {
+            "status": "completed",
+            "outcome": "ENV-TP",
+            "pr_number": 6,
+            "claims": [
+              "META",
+              "ENV-TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ]
+          },
+          "05": {
+            "status": "completed",
+            "outcome": "ENV-TP",
+            "pr_number": 8,
+            "claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ]
+          },
+          "06": {
+            "status": "completed",
+            "outcome": "ENV-TP",
+            "pr_number": 10,
+            "claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ]
+          }
+        },
+        "repeat_r2": {
+          "01:code_only": {
+            "r1_claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "04:with_snapshot": {
+            "r1_claims": [
+              "META",
+              "ENV-TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "ENV-TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "05:code_only": {
+            "r1_claims": [
+              "META",
+              "META",
+              "META"
+            ],
+            "r2_claims": [
+              "META",
+              "META"
+            ],
+            "consistent": true
+          },
+          "05:with_snapshot": {
+            "r1_claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "ENV-TP",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "09:code_only": {
+            "r1_claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "TP",
+              "VALID-AUX",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          },
+          "10:code_only": {
+            "r1_claims": [
+              "META",
+              "FP",
+              "META",
+              "DUP"
+            ],
+            "r2_claims": [
+              "META",
+              "FP",
+              "META",
+              "DUP"
+            ],
+            "consistent": true
+          }
+        }
+      }
+    }
+  },
+  "deployment_traces": [
+    {
+      "trace_id": "baseline-local-smoke",
+      "environment_kind": "local-smoke",
+      "commit_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+      "workflow_run_url": "local://aws/deploy.py#smoke",
+      "stack_name": "ai-review-bench",
+      "request_id": "local-smoke",
+      "response_json": "{\"commit\": \"79d03777827b88aa23ee9309ebefab5f9766cd09\", \"request_id\": \"local-smoke\", \"report\": \"Weekly orders\", \"delivered_this_run\": 1, \"receipt_at\": 101, \"summary\": {\"delivered\": 1, \"pending\": 0}}",
+      "recorded_at": "2026-11-27T07:46:35.024217+00:00",
+      "notes": "Lambda smoke handler and verify_response passed"
+    },
+    {
+      "trace_id": "deploy-py-local-smoke",
+      "environment_kind": "local-smoke",
+      "commit_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+      "workflow_run_url": "local://aws/deploy.py#smoke",
+      "stack_name": "ai-review-bench",
+      "request_id": "local-smoke",
+      "response_json": "{\"commit\": \"79d03777827b88aa23ee9309ebefab5f9766cd09\", \"request_id\": \"local-smoke\", \"report\": \"Weekly orders\", \"delivered_this_run\": 1, \"receipt_at\": 101, \"summary\": {\"delivered\": 1, \"pending\": 0}}",
+      "recorded_at": "2026-11-27T07:51:36.326285+00:00",
+      "notes": "Inline CloudFormation template size: 5736 / 51200 bytes."
+    },
+    {
+      "trace_id": "deploy-py-emulated-cfn-lambda",
+      "environment_kind": "emulated-cloudformation-lambda",
+      "commit_sha": "79d03777827b88aa23ee9309ebefab5f9766cd09",
+      "workflow_run_url": "local://aws/deploy.py#deploy-verify-delete",
+      "stack_name": "ai-review-bench",
+      "request_id": "emulated-lambda-56b1e563-b945-478e-97d3-39fa7e87bb20",
+      "response_json": "{\"commit\": \"79d03777827b88aa23ee9309ebefab5f9766cd09\", \"request_id\": \"emulated-lambda-56b1e563-b945-478e-97d3-39fa7e87bb20\", \"report\": \"Weekly orders\", \"delivered_this_run\": 1, \"receipt_at\": 101, \"summary\": {\"delivered\": 1, \"pending\": 0}}",
+      "recorded_at": "2026-11-27T07:51:36.326285+00:00",
+      "notes": "deploy=Deployed 79d03777827b88aa23ee9309ebefab5f9766cd09 to ai-review-bench in us-east-1. | delete=Removed ai-review-bench from us-east-1. | idempotent_delete=ai-review-bench is absent in us-east-1."
+    }
+  ]
+}

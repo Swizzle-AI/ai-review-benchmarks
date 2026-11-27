@@ -1,0 +1,1622 @@
+[
+  {
+    "blind_id": "BLIND-1E70C2F0E1",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: changing cursor semantics from delivery id to scheduled_at breaks in-flight cursors saved before the upgrade.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-29650984E1",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Provider quota / rate-limit notice; attempt recorded as QUOTA_STOP in coverage denominator.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-30123D62BF",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4E124AC5D4",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-59EF842C0F",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7E177403F3",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: ORDER BY scheduled_at DESC, id DESC performs a table scan and temp B-tree sort without a composite index.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-835B994377",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-91661ED8BA",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A7B2E7B2B7",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-BDAC4404E0",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-CA25605415",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E9CA4E1417",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-EB12A987CC",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-260E36E144",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: ORDER BY scheduled_at DESC, id DESC performs a table scan and temp B-tree sort without a composite index.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-3026286AA0",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-46F00AD44E",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-67353AA9C4",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7982162B29",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7B5970A964",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-BD740F06BE",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E7E272D40E",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: WHERE scheduled_at < ? with scalar cursor drops tied-timestamp rows across page boundaries.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-EDEA73E052",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-FBA46254C9",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: changing cursor semantics from delivery id to scheduled_at breaks in-flight cursors saved before the upgrade.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-21B8320F30",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-22AF1E3F2D",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-345DFDE735",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: manual ','.join(map(str, row)) corrupts RFC-4180 CSV columns when report contains commas/quotes/newlines.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5657587A64",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5E4E10CBF2",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: iterating the live SQLite cursor while streaming output holds a read lock and can leave a truncated export on error.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A0A3A25FCC",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-AB21E35EEB",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-C1582EDB69",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E8213F28DE",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle: manual ','.join(map(str, row)) corrupts RFC-4180 CSV columns when report contains commas/quotes/newlines.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-EF185AB517",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F61980F773",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-0291CC6F1E",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-053811BA9A",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle and aws/deploy.py smoke: range(0, len(jobs) - 20 + 1, 20) drops len(jobs) % 20 remainder jobs.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4B0EE16612",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7B48F9BECD",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-99864BC564",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-CF41DBBD9F",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D052307FE6",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D17BFECFD3",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle and aws/deploy.py smoke: range(0, len(jobs) - 20 + 1, 20) drops len(jobs) % 20 remainder jobs.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D346A5F3B0",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-FD27BF341F",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-09E67016B0",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-0F2051CB57",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2A72042037",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-440BB15553",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-670DCCEDDC",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: reports.migrate() checks PRAGMA user_version before acquiring a write transaction, so concurrent migrations can race on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-67CB4EC7C3",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-8E94C6705E",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-9A321AA447",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-C97D4C02B1",
+    "classification": "ENV-ASK",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-209432A0B5",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-27981C21F8",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-33BB699C8E",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5F24371735",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: reports.migrate() checks PRAGMA user_version before acquiring a write transaction, so concurrent migrations can race on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5F35BE2F6D",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-603DC5BDDA",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-643344B3DB",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7C1E7AA74F",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-8800D50A03",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A0746BAAE4",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-C616940843",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-EF09519A6C",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-0B2BEFEC04",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2D27163548",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: reports.migrate() checks PRAGMA user_version before acquiring a write transaction, so concurrent migrations can race on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2E48273120",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-33DC97B1D2",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-35AC0EA183",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-8CA372C037",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-937135AF3F",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against inventory-204: elm workers-17 replicas poll SELECT id, legacy_format ..., crashing on DROP COLUMN.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D344219FF6",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D56D6FB330",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D5CB985408",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D6D06C7332",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-DEE8BA216C",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7EE7F525A8",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-86A0261193",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-8EE84E3992",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A825078D8A",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-BDDA6F0CCA",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F3BE60C5B9",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2B5A764B4C",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4BFD4D6127",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-B085F3F2FD",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D67CF72E80",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D8BE0D2FCC",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2155A910CB",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-335FA45356",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-3CF88C9165",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4008498519",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4AFEE1B176",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5066D6A1BB",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar archive-11 max_rows_per_request=40 limit.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5F03105CF4",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-61235B49BC",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-B8F7A605BB",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-FD0A2A54F1",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar archive-11 max_rows_per_request=40 limit.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-01AAE29AE7",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-1E723571CD",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against archive-318: EXPORT_BATCH_SIZE = 50 exceeds cedar archive-11 max_rows_per_request=40 limit.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-30189B95C2",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-33529C651D",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-442EBFD81C",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-47224A69C4",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5C9E48214D",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7FC70C53A0",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-DD9B81A3ED",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-1F52720F3D",
+    "classification": "ENV-ASK",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2E22DAE6EF",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer explicitly declines to mark the environment-dependent change safe without a connected deployment environment (outcome=INCOMPLETE, incomplete_causes=['NOT_CONFIGURED']).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-33A4BCEBD8",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-3B22F1F055",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-75A8BF33E2",
+    "classification": "ENV-ASK",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Correctly flags that schedule() writes to 'report-dispatch' while workers polling 'reports' will leave deliveries pending.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-84AB51B459",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-94A27F2F3C",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A8CAC6E561",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-C0D1CF103F",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E423A55235",
+    "classification": "ENV-ASK",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Correctly flags that schedule() writes to 'report-dispatch' while workers polling 'reports' will leave deliveries pending.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-047671DF2B",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against subscriptions-416: elm subscribes only to ['reports'], stranding 8 due jobs on 'report-dispatch'.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-047829EFD4",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5848589449",
+    "classification": "ENV-TP",
+    "cites_env_evidence": true,
+    "identifies_affected_site": true,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by two-site simulator against subscriptions-416: elm subscribes only to ['reports'], stranding 8 due jobs on 'report-dispatch'.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-61EDBB9739",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7CEB310DFA",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-871C62D51E",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-8ECDC79CAC",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-B6D673CB0B",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-BC1EB3EAC5",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D305191906",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-10EAD5DBC5",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-17E2C9DFB8",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-44C9474AF3",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-699C5CEAE6",
+    "classification": "FP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "False positive on clean migration Case 07.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-6CAD6B9B14",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7BBB56CC36",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7F31E3BD98",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A838A4687A",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D46C7E1482",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-03DE3AA480",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2B89641039",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-89011AEBD4",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A0314846F6",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E61099F013",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F4D26646FD",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-13E0485B81",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-17C987A6FE",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4BD89CE92C",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4DE72F425B",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-504CF2382C",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-56455CE258",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-5E2575A1FE",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-9838D581B2",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-999E9A38AF",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: retrying immediately on RuntimeError without backoff can exhaust all three attempts during a transient sink throttle.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F34E440D40",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F90979026D",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-158D452417",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2EA14F5BE5",
+    "classification": "VALID-AUX",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Valid secondary observation: retrying immediately on RuntimeError without backoff can exhaust all three attempts during a transient sink throttle.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-3A9B07CCEE",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-3EAB49FCFA",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer reports INCOMPLETE (NOT_CONFIGURED / NO_CLOUD_ACCOUNT) without posting a code defect finding.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-4F8760BC9B",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-86D26A9B4D",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-A0C4E25373",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-CD3626C003",
+    "classification": "TP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified by oracle on Held-Out Case 09: list(islice(rows, EXPORT_BATCH_SIZE)) inside retry loop drops the failed 25-row batch.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D5416FFA25",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-DC073C324E",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-F9D5232DE8",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-15AAF09FDF",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-3D2207BCB7",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-93A426B886",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-B2A47650A9",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-D0ACD8C519",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-DF6F4EF0A7",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E6E8F9A9D7",
+    "classification": "FP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-033A2053F6",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-11538A0073",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-2A4EC227A4",
+    "classification": "FP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-7BB44C21F1",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-80631011C2",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-96FFF26A9D",
+    "classification": "DUP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Top-level PR review wrapper repeating the inline review comment(s) already scored on this attempt.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-C174F3A639",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Administrative check-run or PR overview wrapper without an independent defect claim.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-E22E2282C4",
+    "classification": "FP",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Verified False Positive by oracle on Held-Out Clean Control Case 10.",
+    "graded_by": "oracle-blind-grader-v1"
+  },
+  {
+    "blind_id": "BLIND-FF05C554D5",
+    "classification": "META",
+    "cites_env_evidence": false,
+    "identifies_affected_site": false,
+    "verification_test": "tests/test_benchmark_suite.py",
+    "grading_rationale": "Reviewer completed with zero findings (True Negative on clean cases 07, 08, 10; clean pass on code-only case 05).",
+    "graded_by": "oracle-blind-grader-v1"
+  }
+]
